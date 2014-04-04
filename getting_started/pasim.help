@@ -1,0 +1,71 @@
+
+Generic options:
+ for memory/cache sizes the following units are allowed: k, m, g, or kb, mb, gb:
+  -h [ --help ]              produce help message
+  -c [ --maxc ] arg (=inf.)  stop simulation after the given number of cycles
+  -b [ --binary ] arg        binary or elf-executable file (stdin: -)
+  -o [ --output ] arg (=-)   output execution trace in file (stdout: -)
+  --debug [=arg(=0)]         enable step-by-step debug tracing after cycle
+  --debug-fmt arg (=default) format of the debug trace (short, trace, instr, 
+                             blocks, calls, calls-indent, default, long, all)
+  --debug-file arg (=-)      output debug trace in file (stderr: -)
+  --debug-nopc               do not print PC and cycles counter in debug output
+  --print-stats arg          print statistics for a given function only.
+  --flush-caches arg         flush all caches when reaching the given address 
+                             (can be a symbol name).
+  -V [ --full ]              full statistics output
+  -v [ --verbose ]           enable short statistics output
+
+Memory options:
+  -g [ --gsize ] arg (=64m) global memory size in bytes
+  -G [ --gtime ] arg (=7)   global memory transfer time per burst in cycles
+  -t [ --tdelay ] arg (=0)  read delay to global memory per request in cycles
+  --trefresh arg (=0)       refresh cycles per TDM round
+  --bsize arg (=16)         burst size (and alignment) of the memory system.
+  --psize arg (=0)          Memory page size. Enables variable burst lengths 
+                            for single-core.
+  -p [ --posted ] arg (=0)  Enable posted writes (sets max queue size)
+  -l [ --lsize ] arg (=2k)  local memory size in bytes
+
+Cache options:
+  -d [ --dcsize ] arg (=2k)     data cache size in bytes
+  -D [ --dckind ] arg (=lru2)   kind of direct mapped/fully-/set-associative 
+                                data cache, defaults to lru2 (ideal, no, dm, 
+                                lru[N], fifo[N])
+  --dlsize arg (=0)             size of a data cache line in bytes, defaults to
+                                burst size if set to 0
+  -s [ --scsize ] arg (=2k)     stack cache size in bytes
+  -S [ --sckind ] arg (=block)  kind of stack cache (ideal, block, lblock, 
+                                dcache)
+  -C [ --icache ] arg (=mcache) kind of instruction cache (mcache, icache)
+  -K [ --ickind ] arg (=lru2)   kind of direct mapped/fully-/set-associative 
+                                I-cache (ideal, no, dm, lru[N], fifo[N]
+  --ilsize arg (=0)             size of an I-cache line in bytes, defaults to 
+                                burst size if set to 0
+  -m [ --mcsize ] arg (=2k)     method cache / instruction cache size in bytes
+  -M [ --mckind ] arg (=fifo)   kind of method cache (ideal, lru, fifo)
+  --mcmethods arg (=16)         Maximum number of methods in the method cache, 
+                                defaults to number of blocks if zero
+  --mbsize arg (=8)             method cache block size in bytes, defaults to 
+                                burst size if zero
+
+Simulator options:
+  --cpuid arg (=0)              Set CPU ID in the simulator
+  -N [ --cores ] arg (=1)       Set number of CPUs (enables memory TDM)
+  --freq arg (=80)              Set CPU Frequency in Mhz
+  --mmbase arg (=0xf0000000)    base address of the IO device map address range
+  --mmhigh arg (=0xffffffff)    highest address of the IO device map address 
+                                range
+  --cpuinfo_offset arg (=0x0)   offset where the cpuinfo device is mapped
+  --excunit_offset arg (=0x100) offset where the exception unit is mapped
+  --timer_offset arg (=0x200)   offset where the timer device is mapped
+  --uart_offset arg (=0x800)    offset where the UART device is mapped
+  --led_offset arg (=0x900)     offset where the LED device is mapped
+
+UART options:
+  -I [ --in ] arg (=-)  input file for UART simulation (stdin: -)
+  -O [ --out ] arg (=-) output file for UART simulation (stdout: -)
+
+Interrupt options:
+  --interrupt arg (=0)  enable interval interrupts
+

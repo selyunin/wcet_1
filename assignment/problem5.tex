@@ -1,0 +1,18 @@
+\label{problem:5}
+The final goal is to analyze the WCET of \texttt{task.c:task()}.
+
+\begin{itemize}
+
+\item[Q1:]
+  First, calculate the WCET of \texttt{check\_sin} and \texttt{check\_square}.
+  Then, try to give a rough estimate on the WCET by combining the WCET's of
+  \texttt{merge\_samples}, \texttt{fft}, \texttt{check\_sin} and
+  \texttt{check\_square}. Clearly state how you combined the WCETs, and compare
+  the resulting value with the maximum observed execution time of these
+  functions, combined in the same way.
+
+\item[Q2:]
+  Add a flow fact for the indirect call in \texttt{task}, calculate the WCET of
+  \texttt{task}, and compare it to the maximum execution time observed.
+
+\end{itemize}

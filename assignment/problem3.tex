@@ -1,0 +1,38 @@
+\label{problem:3}
+
+First, focus on the analysis of \texttt{task.c:merge\_samples()}.  The loop
+bounds in this function depend on the input-data dependent parameter
+\texttt{@inputcount}, defined to be the maximal value of
+\texttt{input->input\_count}. Add loop bounds and flow facts for
+\texttt{merge\_samples}, and analyze its WCET assuming that
+$\texttt{@inputcount} \leq 64$.
+
+\begin{itemize}
+
+\item[Q1:]
+  Describe and justify the loop bounds and flow facts used in the WCET analysis
+  of \texttt{merge\_samples}.
+
+\item[Q2:]
+  What is the maximum execution time observed for this function? What is the
+  analyzed WCET? In case they do not coincide, discuss reasons for the
+  impreciseness in the static analysis.
+
+\item[Hint:]
+  For measurements, you might want to rely on or start with the test bench
+  implemented in\\
+  \texttt{main.c:test\_merge\_samples()}.
+
+\item[Hint:]
+  Division is implemented in software for the Patmos architecture. We replaced
+  the division in the interpolation routine by a lookup table for small values,
+  to simplify the analysis problem. You do not need to worry about the analysis
+  of \texttt{iinterpolate16}; simply use the following annotations:
+
+\end{itemize}
+
+\begin{verbatim}
+  include "llvm.ais";
+  instruction "iinterpolate16" + 1 calls is never executed;
+  instruction "iinterpolate16" + 2 calls is never executed;
+\end{verbatim}

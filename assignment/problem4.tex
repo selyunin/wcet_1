@@ -1,0 +1,28 @@
+\label{problem:4}
+
+Next, analyze the \texttt{fft()} function called in \texttt{task.c}. Try to
+find loop bounds for the Fast Fourier Transform implementation
+(\texttt{fixedpoint.c:fp\_radix2fft\_withscaling()}) first, and add a flow
+constraint relating the execution frequency of the inner loop's body with
+the function's execution frequency.
+
+\begin{itemize}
+
+\item[Q1:]
+  Describe and justify the flow facts found for
+  \texttt{fp\_radix2fft\_withscaling}, and \texttt{fft}.
+
+\item[Q2:]
+  What is the maximum execution time observed for this function? What
+  is the analyzed WCET?
+
+\item[Q3:]
+  For the FFT implementation \texttt{fp\_radix2fft\_withscaling}, is it safe to
+  use the loop iteration counts observed during a test run? Justify your
+  answer.
+
+\item[Hint:]
+  For measurements, you might want to rely on or start with the test
+  implementation \texttt{main.c:test\_fft()}
+
+\end{itemize}

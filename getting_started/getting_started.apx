@@ -1,0 +1,23 @@
+<!DOCTYPE APX>
+<project xmlns="http://www.absint.com/apx" version="13.04i" build="205838" target="patmos">
+ <files>
+  <executables hash="a0088bd7eeca08efee9e0c658b5ca728">test.elf</executables>
+  <ais hash="ac504fb052c19e028a2cb114dd0982ce">test.ais</ais>
+ </files>
+ <analyses>
+  <analysis type="wcet_analysis" enabled="true" id="aiT">
+   <analysis_start>task</analysis_start>
+   <ais>aiT.ais</ais>
+  </analysis>
+  <analysis type="control_flow_graph" enabled="true" id="ControlFlow_Visualizer">
+   <analysis_start>task</analysis_start>
+   <ais>aiT.ais</ais>
+   <report></report>
+   <xml_report></xml_report>
+   <html_report></html_report>
+   <gdl></gdl>
+   <comment></comment>
+   <automatic_annotations></automatic_annotations>
+  </analysis>
+ </analyses>
+</project>

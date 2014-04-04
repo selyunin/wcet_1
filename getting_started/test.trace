@@ -1,0 +1,343 @@
+000010fc        65 call from <_start> to <__init> args: r3 = 00032a18, r4 = 04000000, r5 = 03000000, r6 = 01000000, r7 = 00000000, r8 = 00000000
+0000123c       166 return from <__init> to <_start> retval: r1 = 000328c8, r2 = 000328c8
+00001114       187 call from <_start> to <atexit> args: r3 = 00001244, r4 = 04000000, r5 = 03000000, r6 = 01000000, r7 = 00000000, r8 = 00000000
+00001870       238 call from <atexit> to <__register_exitproc> args: r3 = 00000000, r4 = 00001244, r5 = 00000000, r6 = 00000000, r7 = 00000000, r8 = 00000000
+00003e8c       585 return from <__register_exitproc> to <atexit> retval: r1 = 00000000, r2 = 00000000
+0000189c       620 return from <atexit> to <_start> retval: r1 = 00000000, r2 = 00000000
+00001124       648 call from <_start> to <main> args: r3 = 00000000, r4 = 00000000, r5 = 00000000, r6 = 00000000, r7 = 00000000, r8 = 00000000
+000013dc       851 call from <main> to <task> args: r3 = 00032000, r4 = 00032914, r5 = 00000000, r6 = 00000000, r7 = 00000000, r8 = 00000000
+000017a8      1233 call from <task> to <actuate> args: r3 = 00032914, r4 = 00032914, r5 = 00000000, r6 = 00000000, r7 = 00000000, r8 = 00000000
+000016b8      1295 return from <actuate> to <task> retval: r1 = 00000001, r2 = 00000080
+000017dc      1316 return from <task> to <main> retval: r1 = 00000001, r2 = 00000080
+000014ac      1524 call from <main> to <task> args: r3 = 00032004, r4 = 00032915, r5 = 00000000, r6 = 00000000, r7 = 00000000, r8 = 00000000
+000017dc      1886 return from <task> to <main> retval: r1 = 00000080, r2 = 0000007f
+00001558      2054 call from <main> to <printf> args: r3 = 00000001, r4 = 03ffff74, r5 = 00000000, r6 = 00000000, r7 = 00000000, r8 = 00000000
+00002bcc      2135 call from <printf> to <_vfprintf_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 000319fc, r6 = 03ffff78, r7 = 00000000, r8 = 00000000
+00004008      2312 call from <_vfprintf_r> to <_localeconv_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 000319fc, r6 = 03ffff78, r7 = 00000000, r8 = 00000000
+0001bcd0      2332 return from <_localeconv_r> to <_vfprintf_r> retval: r1 = 00032890, r2 = 03ffff78
+00004020      2354 call from <_vfprintf_r> to <strlen> args: r3 = 00031ac4, r4 = 000327c0, r5 = 000319fc, r6 = 03ffff78, r7 = 00000000, r8 = 00000000
+0000331c      2681 return from <strlen> to <_vfprintf_r> retval: r1 = 00000001, r2 = 00031ac4
+000040f0      2877 call from <_vfprintf_r> to <__sinit> args: r3 = 0003246c, r4 = 03fff688, r5 = 0003246c, r6 = 03ffff78, r7 = 000327c0, r8 = 00000000
+0000f618      3153 call from <__sinit> to <memset> args: r3 = 000327b4, r4 = 00000000, r5 = 00000008, r6 = 00000008, r7 = 00032754, r8 = 00000000
+00002ad4      3652 return from <memset> to <__sinit> retval: r1 = 000327b4, r2 = 000327bc
+0000f6c8      3900 call from <__sinit> to <memset> args: r3 = 0003281c, r4 = 00000000, r5 = 00000008, r6 = 00021e04, r7 = 0003246c, r8 = 000327c0
+00002ad4      4367 return from <memset> to <__sinit> retval: r1 = 0003281c, r2 = 00032824
+0000f75c      4564 call from <__sinit> to <memset> args: r3 = 00032884, r4 = 00000000, r5 = 00000008, r6 = 00021e04, r7 = 0003246c, r8 = 00032828
+00002ad4      5039 return from <memset> to <__sinit> retval: r1 = 00032884, r2 = 0003288c
+0000f7c4      5145 return from <__sinit> to <_vfprintf_r> retval: r1 = 00032884, r2 = 00032828
+0000421c      5385 call from <_vfprintf_r> to <__swsetup_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 00000000, r6 = 00021e04, r7 = 0003246c, r8 = 00000001
+00014acc      5675 call from <__swsetup_r> to <__smakebuf_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 00002009, r6 = 00021e04, r7 = 0003246c, r8 = 00000001
+00022f18      5861 call from <__smakebuf_r> to <_fstat_r> args: r3 = 0003246c, r4 = 00000001, r5 = 03fff0c4, r6 = 00000000, r7 = 0003246c, r8 = 00000001
+00025184      5956 call from <_fstat_r> to <_fstat> args: r3 = 00000001, r4 = 03fff0c4, r5 = 03fff0c4, r6 = 00000000, r7 = 0003246c, r8 = 00000001
+00027120      5995 return from <_fstat> to <_fstat_r> retval: r1 = 00000000, r2 = 00010000
+00025228      6148 return from <_fstat_r> to <__smakebuf_r> retval: r1 = 00000000, r2 = 00000001
+000230a0      6299 call from <__smakebuf_r> to <_malloc_r> args: r3 = 0003246c, r4 = 00000400, r5 = 03fff0c4, r6 = 0003246c, r7 = 0003246c, r8 = 00000001
+0001bf1c      6430 call from <_malloc_r> to <__malloc_lock> args: r3 = 0003246c, r4 = 00000400, r5 = 03fff0c4, r6 = 0003246c, r7 = 0003246c, r8 = 00000001
+000219d0      6450 return from <__malloc_lock> to <_malloc_r> retval: r1 = 0000040b, r2 = 00000408
+0001cf74      7037 call from <_malloc_r> to <_sbrk_r> args: r3 = 0003246c, r4 = 00000418, r5 = 00000408, r6 = 00000418, r7 = ffffffff, r8 = ffffffff
+00023c40      7131 call from <_sbrk_r> to <_sbrk> args: r3 = 00000418, r4 = 00000418, r5 = 00000408, r6 = 00000418, r7 = ffffffff, r8 = ffffffff
+000276dc      7253 return from <_sbrk> to <_sbrk_r> retval: r1 = 00032b1c, r2 = 00032f34
+00023cd8      7363 return from <_sbrk_r> to <_malloc_r> retval: r1 = 00032b1c, r2 = 00000418
+0001d21c      7721 call from <_malloc_r> to <_sbrk_r> args: r3 = 0003246c, r4 = 000000cc, r5 = 000000cc, r6 = 00000418, r7 = ffffffff, r8 = ffffffff
+00023c40      7823 call from <_sbrk_r> to <_sbrk> args: r3 = 000000cc, r4 = 000000cc, r5 = 000000cc, r6 = 00000418, r7 = ffffffff, r8 = ffffffff
+000276dc      7937 return from <_sbrk> to <_sbrk_r> retval: r1 = 00032f34, r2 = 00033000
+00023cd8      8047 return from <_sbrk_r> to <_malloc_r> retval: r1 = 00032f34, r2 = 000000cc
+0001d54c      8434 call from <_malloc_r> to <__malloc_unlock> args: r3 = 0003246c, r4 = 00032f2c, r5 = 00032058, r6 = 00032058, r7 = 000004e4, r8 = ffffffff
+00021a10      8454 return from <__malloc_unlock> to <_malloc_r> retval: r1 = 00032b20, r2 = 000000d9
+0001d59c      8498 return from <_malloc_r> to <__smakebuf_r> retval: r1 = 00032b28, r2 = 00032b28
+000231c0      8652 call from <__smakebuf_r> to <_isatty_r> args: r3 = 0003246c, r4 = 00000001, r5 = 00000400, r6 = 00000001, r7 = 000004e4, r8 = ffffffff
+00025280      8738 call from <_isatty_r> to <_isatty> args: r3 = 00000001, r4 = 00000001, r5 = 00000400, r6 = 00000001, r7 = 000004e4, r8 = ffffffff
+00026e6c      8796 call from <_isatty> to <fstat> args: r3 = 00000001, r4 = 03fff03c, r5 = 00000400, r6 = 00000001, r7 = 000004e4, r8 = ffffffff
+00026fd0      8886 call from <fstat> to <_fstat_r> args: r3 = 0003246c, r4 = 00000001, r5 = 03fff03c, r6 = 00000001, r7 = 000004e4, r8 = ffffffff
+00025184      8981 call from <_fstat_r> to <_fstat> args: r3 = 00000001, r4 = 03fff03c, r5 = 03fff03c, r6 = 00000001, r7 = 000004e4, r8 = ffffffff
+00027120      9020 return from <_fstat> to <_fstat_r> retval: r1 = 00000000, r2 = 0003246c
+00025228      9157 return from <_fstat_r> to <fstat> retval: r1 = 00000000, r2 = 00000001
+00027008      9211 return from <fstat> to <_isatty> retval: r1 = 00000000, r2 = 00000001
+00026f3c      9310 return from <_isatty> to <_isatty_r> retval: r1 = 00000001, r2 = 00002000
+00025318      9420 return from <_isatty_r> to <__smakebuf_r> retval: r1 = 00000001, r2 = 00000001
+0002321c      9475 return from <__smakebuf_r> to <__swsetup_r> retval: r1 = 000327cc, r2 = 00002889
+00014c1c      9630 return from <__swsetup_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000000
+0000dbd0     14879 call from <_vfprintf_r> to <__sprint_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 03fff63c, r6 = 03fff640, r7 = 00000000, r8 = 00000007
+0000fd74     15050 call from <__sprint_r> to <__sfvwrite_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 03fff63c, r6 = 03fff640, r7 = 00000000, r8 = 00000007
+00022998     15839 call from <__sfvwrite_r> to <memchr> args: r3 = 000319fc, r4 = 0000000a, r5 = 00000011, r6 = 00000000, r7 = 00000000, r8 = 03fff648
+00001df4     16759 return from <memchr> to <__sfvwrite_r> retval: r1 = 00000000, r2 = 00031a0d
+00022c48     17032 call from <__sfvwrite_r> to <memmove> args: r3 = 00032b28, r4 = 000319fc, r5 = 00000011, r6 = 00000400, r7 = 000327d4, r8 = 00000400
+00002764     17645 return from <memmove> to <__sfvwrite_r> retval: r1 = 00032b28, r2 = 00032b38
+00022998     18251 call from <__sfvwrite_r> to <memchr> args: r3 = 03fff6eb, r4 = 0000000a, r5 = 00000001, r6 = 00000000, r7 = 03fff644, r8 = 00000000
+00001df4     18690 return from <memchr> to <__sfvwrite_r> retval: r1 = 00000000, r2 = 03fff6ec
+00022c48     18963 call from <__sfvwrite_r> to <memmove> args: r3 = 00032b39, r4 = 03fff6eb, r5 = 00000001, r6 = 000003ef, r7 = 000327d4, r8 = 00000400
+00002764     19209 return from <memmove> to <__sfvwrite_r> retval: r1 = 00032b39, r2 = 00032b39
+00022e14     19510 return from <__sfvwrite_r> to <__sprint_r> retval: r1 = 00000000, r2 = 03fff6eb
+0000fdcc     19596 return from <__sprint_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 03fff644
+0000dbd0     23505 call from <_vfprintf_r> to <__sprint_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 03fff63c, r6 = 03fff640, r7 = 00000000, r8 = 00000007
+0000fd74     23668 call from <__sprint_r> to <__sfvwrite_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 03fff63c, r6 = 03fff640, r7 = 00000000, r8 = 00000007
+00022998     24457 call from <__sfvwrite_r> to <memchr> args: r3 = 00031a0f, r4 = 0000000a, r5 = 00000002, r6 = 00000000, r7 = 00000000, r8 = 03fff648
+00001df4     25049 return from <memchr> to <__sfvwrite_r> retval: r1 = 00000000, r2 = 00031a11
+00022c48     25322 call from <__sfvwrite_r> to <memmove> args: r3 = 00032b3a, r4 = 00031a0f, r5 = 00000002, r6 = 000003ee, r7 = 000327d4, r8 = 00000400
+00002764     25647 return from <memmove> to <__sfvwrite_r> retval: r1 = 00032b3a, r2 = 00032b3b
+00022998     26253 call from <__sfvwrite_r> to <memchr> args: r3 = 03fff6eb, r4 = 0000000a, r5 = 00000001, r6 = 00000000, r7 = 03fff644, r8 = 00000000
+00001df4     26684 return from <memchr> to <__sfvwrite_r> retval: r1 = 00000000, r2 = 03fff6ec
+00022c48     26957 call from <__sfvwrite_r> to <memmove> args: r3 = 00032b3c, r4 = 03fff6eb, r5 = 00000001, r6 = 000003ec, r7 = 000327d4, r8 = 00000400
+00002764     27203 return from <memmove> to <__sfvwrite_r> retval: r1 = 00032b3c, r2 = 00032b3c
+00022e14     27504 return from <__sfvwrite_r> to <__sprint_r> retval: r1 = 00000000, r2 = 03fff6eb
+0000fdcc     27590 return from <__sprint_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 03fff644
+0000de3c     28630 call from <_vfprintf_r> to <__sprint_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 03fff63c, r6 = 00000000, r7 = 00000000, r8 = 00000007
+0000fd74     28793 call from <__sprint_r> to <__sfvwrite_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 03fff63c, r6 = 00000000, r7 = 00000000, r8 = 00000007
+00022998     29582 call from <__sfvwrite_r> to <memchr> args: r3 = 00031a13, r4 = 0000000a, r5 = 00000001, r6 = 00000000, r7 = 00000000, r8 = 03fff648
+00001df4     29835 return from <memchr> to <__sfvwrite_r> retval: r1 = 00031a13, r2 = 00000000
+00022c48     30124 call from <__sfvwrite_r> to <memmove> args: r3 = 00032b3d, r4 = 00031a13, r5 = 00000001, r6 = 000003eb, r7 = 000327d4, r8 = 00000400
+00002764     30400 return from <memmove> to <__sfvwrite_r> retval: r1 = 00032b3d, r2 = 00032b3d
+00022d08     30560 call from <__sfvwrite_r> to <_fflush_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 00000001, r6 = 00000003, r7 = 000327d4, r8 = 00000400
+0001abc8     30704 call from <_fflush_r> to <__sflush_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 00000001, r6 = 00000003, r7 = 000327d4, r8 = 00000400
+0001aa1c     31086 call from <__sflush_r> to <__swrite> args: r3 = 0003246c, r4 = 000327c0, r5 = 00032b28, r6 = 00000016, r7 = 00021b84, r8 = 00000400
+00021c74     31286 call from <__swrite> to <_write_r> args: r3 = 0003246c, r4 = 00000001, r5 = 00032b28, r6 = 00000016, r7 = 000327ce, r8 = 00000400
+00026bcc     31391 call from <_write_r> to <_write> args: r3 = 00000001, r4 = 00032b28, r5 = 00000016, r6 = 00000016, r7 = 000327ce, r8 = 00000400
+00027850     33463 return from <_write> to <_write_r> retval: r1 = 00000016, r2 = 00000016
+00026c7c     33611 return from <_write_r> to <__swrite> retval: r1 = 00000016, r2 = 00000001
+00021c9c     33645 return from <__swrite> to <__sflush_r> retval: r1 = 00000016, r2 = 00000001
+0001aad0     33758 return from <__sflush_r> to <_fflush_r> retval: r1 = 00000000, r2 = 00000016
+0001abfc     33795 return from <_fflush_r> to <__sfvwrite_r> retval: r1 = 00000000, r2 = 00000016
+00022e14     33987 return from <__sfvwrite_r> to <__sprint_r> retval: r1 = 00000000, r2 = 00031a13
+0000fdcc     34073 return from <__sprint_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 03fff644
+0000dfc8     34277 return from <_vfprintf_r> to <printf> retval: r1 = 00000016, r2 = ffffffff
+00002bec     34301 return from <printf> to <main> retval: r1 = 00000016, r2 = ffffffff
+000015b4     34386 call from <main> to <fprintf> args: r3 = 00000247, r4 = 00031a15, r5 = 03ffff70, r6 = 00000000, r7 = 03fff644, r8 = 00000000
+00001a4c     34459 call from <fprintf> to <_vfprintf_r> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a15, r6 = 03ffff78, r7 = 03fff644, r8 = 00000000
+00004008     34636 call from <_vfprintf_r> to <_localeconv_r> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a15, r6 = 03ffff78, r7 = 03fff644, r8 = 00000000
+0001bcd0     34656 return from <_localeconv_r> to <_vfprintf_r> retval: r1 = 00032890, r2 = 03ffff78
+00004020     34670 call from <_vfprintf_r> to <strlen> args: r3 = 00031ac4, r4 = 00032828, r5 = 00031a15, r6 = 03ffff78, r7 = 03fff644, r8 = 00000000
+0000331c     34973 return from <strlen> to <_vfprintf_r> retval: r1 = 00000001, r2 = 00031ac4
+0000421c     35309 call from <_vfprintf_r> to <__swsetup_r> args: r3 = 0003246c, r4 = 00032828, r5 = 00000000, r6 = 03ffff78, r7 = 00032828, r8 = 00000000
+00014acc     35682 call from <__swsetup_r> to <__smakebuf_r> args: r3 = 0003246c, r4 = 00032828, r5 = 00002012, r6 = 03ffff78, r7 = 00032828, r8 = 00000000
+0002321c     35857 return from <__smakebuf_r> to <__swsetup_r> retval: r1 = 00032828, r2 = 00000001
+00014c1c     36013 return from <__swsetup_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000000
+000097ec     41532 call from <_vfprintf_r> to <__umoddi3> args: r3 = 00000000, r4 = 00000247, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 00000247
+000314b0     41607 call from <__umoddi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 00000247, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 00000247
+000304fc     41893 call from <__udivmoddi4> to <__umodsi3> args: r3 = 00000247, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031568     41950 call from <__umodsi3> to <__udivsi3> args: r3 = 00000247, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031464     45717 return from <__udivsi3> to <__umodsi3> retval: r1 = 0000003a, r2 = 0000003a
+000315a4     45772 return from <__umodsi3> to <__udivmoddi4> retval: r1 = 00000003, r2 = 0000003a
+0003052c     45816 call from <__udivmoddi4> to <__udivsi3> args: r3 = 00000247, r4 = 0000000a, r5 = 0000003a, r6 = 00000003, r7 = 0000003a, r8 = 00000003
+00031464     49575 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 0000003a, r2 = 0000003a
+000311b0     49650 return from <__udivmoddi4> to <__umoddi3> retval: r1 = 00000000, r2 = 0000003a
+00031518     49756 return from <__umoddi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000003
+00009a18     49977 call from <_vfprintf_r> to <__udivdi3> args: r3 = 00000000, r4 = 00000247, r5 = 00000000, r6 = 0000000a, r7 = 00000247, r8 = 03fff650
+00030370     50052 call from <__udivdi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 00000247, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 03fff650
+0003052c     50327 call from <__udivmoddi4> to <__udivsi3> args: r3 = 00000247, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 0000000a
+00031464     54086 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 0000003a, r2 = 0000003a
+000311b0     54161 return from <__udivmoddi4> to <__udivdi3> retval: r1 = 00000000, r2 = 0000003a
+000303c0     54245 return from <__udivdi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 0000003a
+000097ec     54515 call from <_vfprintf_r> to <__umoddi3> args: r3 = 00000000, r4 = 0000003a, r5 = 00000000, r6 = 0000000a, r7 = 03fff650, r8 = 00000001
+000314b0     54590 call from <__umoddi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 0000003a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 00000001
+000304fc     54860 call from <__udivmoddi4> to <__umodsi3> args: r3 = 0000003a, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031568     54917 call from <__umodsi3> to <__udivsi3> args: r3 = 0000003a, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031464     58618 return from <__udivsi3> to <__umodsi3> retval: r1 = 00000005, r2 = 00000005
+000315a4     58673 return from <__umodsi3> to <__udivmoddi4> retval: r1 = 00000008, r2 = 00000005
+0003052c     58717 call from <__udivmoddi4> to <__udivsi3> args: r3 = 0000003a, r4 = 0000000a, r5 = 00000005, r6 = 00000004, r7 = 00000004, r8 = 0000000b
+00031464     62410 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000005, r2 = 00000005
+000311b0     62485 return from <__udivmoddi4> to <__umoddi3> retval: r1 = 00000000, r2 = 00000005
+00031518     62591 return from <__umoddi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000008
+00009a18     62804 call from <_vfprintf_r> to <__udivdi3> args: r3 = 00000000, r4 = 0000003a, r5 = 00000000, r6 = 0000000a, r7 = 0000003a, r8 = 03fff650
+00030370     62879 call from <__udivdi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 0000003a, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 03fff650
+0003052c     63154 call from <__udivmoddi4> to <__udivsi3> args: r3 = 0000003a, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 0000000a
+00031464     66847 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000005, r2 = 00000005
+000311b0     66922 return from <__udivmoddi4> to <__udivdi3> retval: r1 = 00000000, r2 = 00000005
+000303c0     67006 return from <__udivdi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000005
+000097ec     67276 call from <_vfprintf_r> to <__umoddi3> args: r3 = 00000000, r4 = 00000005, r5 = 00000000, r6 = 0000000a, r7 = 03fff650, r8 = 00000002
+000314b0     67351 call from <__umoddi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 00000005, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 00000002
+000304fc     67621 call from <__udivmoddi4> to <__umodsi3> args: r3 = 00000005, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031568     67678 call from <__umodsi3> to <__udivsi3> args: r3 = 00000005, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031464     71305 return from <__udivsi3> to <__umodsi3> retval: r1 = 00000000, r2 = 00000000
+000315a4     71360 return from <__umodsi3> to <__udivmoddi4> retval: r1 = 00000005, r2 = 00000000
+0003052c     71404 call from <__udivmoddi4> to <__udivsi3> args: r3 = 00000005, r4 = 0000000a, r5 = 00000000, r6 = 00000005, r7 = 00000000, r8 = 0000000b
+00031464     75023 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000000, r2 = 00000000
+000311b0     75098 return from <__udivmoddi4> to <__umoddi3> retval: r1 = 00000000, r2 = 00000000
+00031518     75204 return from <__umoddi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000005
+00009a18     75417 call from <_vfprintf_r> to <__udivdi3> args: r3 = 00000000, r4 = 00000005, r5 = 00000000, r6 = 0000000a, r7 = 00000005, r8 = 03fff650
+00030370     75492 call from <__udivdi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 00000005, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 03fff650
+0003052c     75767 call from <__udivmoddi4> to <__udivsi3> args: r3 = 00000005, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 0000000a
+00031464     79386 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000000, r2 = 00000000
+000311b0     79461 return from <__udivmoddi4> to <__udivdi3> retval: r1 = 00000000, r2 = 00000000
+000303c0     79545 return from <__udivdi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000000
+0000dbd0     81004 call from <_vfprintf_r> to <__sprint_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 03fff63c, r7 = 03fff650, r8 = 00000007
+0000fd74     81159 call from <__sprint_r> to <__sfvwrite_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 03fff63c, r7 = 03fff650, r8 = 00000007
+000220f8     81735 call from <__sfvwrite_r> to <__swrite> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a15, r6 = 0000001c, r7 = 00031a15, r8 = 00000007
+00021c74     81911 call from <__swrite> to <_write_r> args: r3 = 0003246c, r4 = 00000002, r5 = 00031a15, r6 = 0000001c, r7 = 00032836, r8 = 00000007
+00026bcc     82016 call from <_write_r> to <_write> args: r3 = 00000002, r4 = 00031a15, r5 = 0000001c, r6 = 0000001c, r7 = 00032836, r8 = 00000007
+00027850     84586 return from <_write> to <_write_r> retval: r1 = 0000001c, r2 = 0000001c
+00026c7c     84726 return from <_write_r> to <__swrite> retval: r1 = 0000001c, r2 = 00000002
+00021c9c     84760 return from <__swrite> to <__sfvwrite_r> retval: r1 = 0000001c, r2 = 00000002
+000220f8     85097 call from <__sfvwrite_r> to <__swrite> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff6e5, r6 = 00000003, r7 = 03fff6e5, r8 = 00000003
+00021c74     85273 call from <__swrite> to <_write_r> args: r3 = 0003246c, r4 = 00000002, r5 = 03fff6e5, r6 = 00000003, r7 = 00032836, r8 = 00000003
+00026bcc     85378 call from <_write_r> to <_write> args: r3 = 00000002, r4 = 03fff6e5, r5 = 00000003, r6 = 00000003, r7 = 00032836, r8 = 00000003
+00027850     85857 return from <_write> to <_write_r> retval: r1 = 00000003, r2 = 00000003
+00026c7c     85989 return from <_write_r> to <__swrite> retval: r1 = 00000003, r2 = 00000002
+00021c9c     86023 return from <__swrite> to <__sfvwrite_r> retval: r1 = 00000003, r2 = 00000002
+00022e14     86178 return from <__sfvwrite_r> to <__sprint_r> retval: r1 = 00000000, r2 = 00000003
+0000fdcc     86264 return from <__sprint_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 03fff640
+0000de3c     87328 call from <_vfprintf_r> to <__sprint_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 00000000, r7 = 00000000, r8 = 00000007
+0000fd74     87491 call from <__sprint_r> to <__sfvwrite_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 00000000, r7 = 00000000, r8 = 00000007
+000220f8     88043 call from <__sfvwrite_r> to <__swrite> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a35, r6 = 00000001, r7 = 00031a35, r8 = 00000007
+00021c74     88219 call from <__swrite> to <_write_r> args: r3 = 0003246c, r4 = 00000002, r5 = 00031a35, r6 = 00000001, r7 = 00032836, r8 = 00000007
+00026bcc     88324 call from <_write_r> to <_write> args: r3 = 00000002, r4 = 00031a35, r5 = 00000001, r6 = 00000001, r7 = 00032836, r8 = 00000007
+00027850     88629 return from <_write> to <_write_r> retval: r1 = 00000001, r2 = 00000001
+00026c7c     88761 return from <_write_r> to <__swrite> retval: r1 = 00000001, r2 = 00000002
+00021c9c     88795 return from <__swrite> to <__sfvwrite_r> retval: r1 = 00000001, r2 = 00000002
+00022e14     88950 return from <__sfvwrite_r> to <__sprint_r> retval: r1 = 00000000, r2 = 00000001
+0000fdcc     89036 return from <__sprint_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 03fff640
+0000dfc8     89240 return from <_vfprintf_r> to <fprintf> retval: r1 = 00000020, r2 = ffffffff
+00001a6c     89264 return from <fprintf> to <main> retval: r1 = 00000020, r2 = ffffffff
+00001610     89357 call from <main> to <fprintf> args: r3 = 000001d8, r4 = 00031a37, r5 = 03ffff70, r6 = 03fff640, r7 = 00000000, r8 = 00000000
+00001a4c     89422 call from <fprintf> to <_vfprintf_r> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a37, r6 = 03ffff78, r7 = 00000000, r8 = 00000000
+00004008     89599 call from <_vfprintf_r> to <_localeconv_r> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a37, r6 = 03ffff78, r7 = 00000000, r8 = 00000000
+0001bcd0     89619 return from <_localeconv_r> to <_vfprintf_r> retval: r1 = 00032890, r2 = 03ffff78
+00004020     89633 call from <_vfprintf_r> to <strlen> args: r3 = 00031ac4, r4 = 00032828, r5 = 00031a37, r6 = 03ffff78, r7 = 00000000, r8 = 00000000
+0000331c     89936 return from <strlen> to <_vfprintf_r> retval: r1 = 00000001, r2 = 00031ac4
+000097ec     95705 call from <_vfprintf_r> to <__umoddi3> args: r3 = 00000000, r4 = 000001d8, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 000001d8
+000314b0     95780 call from <__umoddi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 000001d8, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 000001d8
+000304fc     96058 call from <__udivmoddi4> to <__umodsi3> args: r3 = 000001d8, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031568     96115 call from <__umodsi3> to <__udivsi3> args: r3 = 000001d8, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031464     99923 return from <__udivsi3> to <__umodsi3> retval: r1 = 0000002f, r2 = 0000002f
+000315a4     99978 return from <__umodsi3> to <__udivmoddi4> retval: r1 = 00000002, r2 = 0000002f
+0003052c    100022 call from <__udivmoddi4> to <__udivsi3> args: r3 = 000001d8, r4 = 0000000a, r5 = 0000002f, r6 = 0000002e, r7 = 0000002e, r8 = 00000003
+00031464    103814 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 0000002f, r2 = 0000002f
+000311b0    103889 return from <__udivmoddi4> to <__umoddi3> retval: r1 = 00000000, r2 = 0000002f
+00031518    103995 return from <__umoddi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000002
+00009a18    104208 call from <_vfprintf_r> to <__udivdi3> args: r3 = 00000000, r4 = 000001d8, r5 = 00000000, r6 = 0000000a, r7 = 000001d8, r8 = 03fff64c
+00030370    104283 call from <__udivdi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 000001d8, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 03fff64c
+0003052c    104558 call from <__udivmoddi4> to <__udivsi3> args: r3 = 000001d8, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 0000000a
+00031464    108350 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 0000002f, r2 = 0000002f
+000311b0    108433 return from <__udivmoddi4> to <__udivdi3> retval: r1 = 00000000, r2 = 0000002f
+000303c0    108517 return from <__udivdi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 0000002f
+000097ec    108787 call from <_vfprintf_r> to <__umoddi3> args: r3 = 00000000, r4 = 0000002f, r5 = 00000000, r6 = 0000000a, r7 = 03fff64c, r8 = 00000001
+000314b0    108862 call from <__umoddi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 0000002f, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 00000001
+000304fc    109132 call from <__udivmoddi4> to <__umodsi3> args: r3 = 0000002f, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031568    109189 call from <__umodsi3> to <__udivsi3> args: r3 = 0000002f, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031464    112857 return from <__udivsi3> to <__umodsi3> retval: r1 = 00000004, r2 = 00000004
+000315a4    112912 return from <__umodsi3> to <__udivmoddi4> retval: r1 = 00000007, r2 = 00000004
+0003052c    112956 call from <__udivmoddi4> to <__udivsi3> args: r3 = 0000002f, r4 = 0000000a, r5 = 00000004, r6 = 00000007, r7 = 00000004, r8 = 0000000b
+00031464    116616 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000004, r2 = 00000004
+000311b0    116691 return from <__udivmoddi4> to <__umoddi3> retval: r1 = 00000000, r2 = 00000004
+00031518    116797 return from <__umoddi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000007
+00009a18    117010 call from <_vfprintf_r> to <__udivdi3> args: r3 = 00000000, r4 = 0000002f, r5 = 00000000, r6 = 0000000a, r7 = 0000002f, r8 = 03fff64c
+00030370    117085 call from <__udivdi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 0000002f, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 03fff64c
+0003052c    117360 call from <__udivmoddi4> to <__udivsi3> args: r3 = 0000002f, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 0000000a
+00031464    121020 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000004, r2 = 00000004
+000311b0    121095 return from <__udivmoddi4> to <__udivdi3> retval: r1 = 00000000, r2 = 00000004
+000303c0    121179 return from <__udivdi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000004
+000097ec    121449 call from <_vfprintf_r> to <__umoddi3> args: r3 = 00000000, r4 = 00000004, r5 = 00000000, r6 = 0000000a, r7 = 03fff64c, r8 = 00000002
+000314b0    121524 call from <__umoddi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 00000004, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 00000002
+000304fc    121794 call from <__udivmoddi4> to <__umodsi3> args: r3 = 00000004, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031568    121851 call from <__umodsi3> to <__udivsi3> args: r3 = 00000004, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 03fff16c, r8 = 0000000a
+00031464    125478 return from <__udivsi3> to <__umodsi3> retval: r1 = 00000000, r2 = 00000000
+000315a4    125533 return from <__umodsi3> to <__udivmoddi4> retval: r1 = 00000004, r2 = 00000000
+0003052c    125577 call from <__udivmoddi4> to <__udivsi3> args: r3 = 00000004, r4 = 0000000a, r5 = 00000000, r6 = 00000004, r7 = 00000000, r8 = 0000000b
+00031464    129196 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000000, r2 = 00000000
+000311b0    129271 return from <__udivmoddi4> to <__umoddi3> retval: r1 = 00000000, r2 = 00000000
+00031518    129377 return from <__umoddi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000004
+00009a18    129590 call from <_vfprintf_r> to <__udivdi3> args: r3 = 00000000, r4 = 00000004, r5 = 00000000, r6 = 0000000a, r7 = 00000004, r8 = 03fff64c
+00030370    129665 call from <__udivdi3> to <__udivmoddi4> args: r3 = 00000000, r4 = 00000004, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 03fff64c
+0003052c    129940 call from <__udivmoddi4> to <__udivsi3> args: r3 = 00000004, r4 = 0000000a, r5 = 00000000, r6 = 0000000a, r7 = 00000000, r8 = 0000000a
+00031464    133559 return from <__udivsi3> to <__udivmoddi4> retval: r1 = 00000000, r2 = 00000000
+000311b0    133634 return from <__udivmoddi4> to <__udivdi3> retval: r1 = 00000000, r2 = 00000000
+000303c0    133718 return from <__udivdi3> to <_vfprintf_r> retval: r1 = 00000000, r2 = 00000000
+0000dbd0    135177 call from <_vfprintf_r> to <__sprint_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 03fff63c, r7 = 03fff64c, r8 = 00000007
+0000fd74    135340 call from <__sprint_r> to <__sfvwrite_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 03fff63c, r7 = 03fff64c, r8 = 00000007
+000220f8    135916 call from <__sfvwrite_r> to <__swrite> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a37, r6 = 0000001c, r7 = 00031a37, r8 = 00000007
+00021c74    136092 call from <__swrite> to <_write_r> args: r3 = 0003246c, r4 = 00000002, r5 = 00031a37, r6 = 0000001c, r7 = 00032836, r8 = 00000007
+00026bcc    136197 call from <_write_r> to <_write> args: r3 = 00000002, r4 = 00031a37, r5 = 0000001c, r6 = 0000001c, r7 = 00032836, r8 = 00000007
+00027850    138775 return from <_write> to <_write_r> retval: r1 = 0000001c, r2 = 0000001c
+00026c7c    138907 return from <_write_r> to <__swrite> retval: r1 = 0000001c, r2 = 00000002
+00021c9c    138941 return from <__swrite> to <__sfvwrite_r> retval: r1 = 0000001c, r2 = 00000002
+000220f8    139278 call from <__sfvwrite_r> to <__swrite> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff6e5, r6 = 00000003, r7 = 03fff6e5, r8 = 00000003
+00021c74    139454 call from <__swrite> to <_write_r> args: r3 = 0003246c, r4 = 00000002, r5 = 03fff6e5, r6 = 00000003, r7 = 00032836, r8 = 00000003
+00026bcc    139559 call from <_write_r> to <_write> args: r3 = 00000002, r4 = 03fff6e5, r5 = 00000003, r6 = 00000003, r7 = 00032836, r8 = 00000003
+00027850    140038 return from <_write> to <_write_r> retval: r1 = 00000003, r2 = 00000003
+00026c7c    140170 return from <_write_r> to <__swrite> retval: r1 = 00000003, r2 = 00000002
+00021c9c    140204 return from <__swrite> to <__sfvwrite_r> retval: r1 = 00000003, r2 = 00000002
+00022e14    140359 return from <__sfvwrite_r> to <__sprint_r> retval: r1 = 00000000, r2 = 00000003
+0000fdcc    140445 return from <__sprint_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 03fff640
+0000de3c    141509 call from <_vfprintf_r> to <__sprint_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 00000000, r7 = 00000000, r8 = 00000007
+0000fd74    141672 call from <__sprint_r> to <__sfvwrite_r> args: r3 = 0003246c, r4 = 00032828, r5 = 03fff638, r6 = 00000000, r7 = 00000000, r8 = 00000007
+000220f8    142240 call from <__sfvwrite_r> to <__swrite> args: r3 = 0003246c, r4 = 00032828, r5 = 00031a57, r6 = 00000001, r7 = 00031a57, r8 = 00000007
+00021c74    142416 call from <__swrite> to <_write_r> args: r3 = 0003246c, r4 = 00000002, r5 = 00031a57, r6 = 00000001, r7 = 00032836, r8 = 00000007
+00026bcc    142521 call from <_write_r> to <_write> args: r3 = 00000002, r4 = 00031a57, r5 = 00000001, r6 = 00000001, r7 = 00032836, r8 = 00000007
+00027850    142826 return from <_write> to <_write_r> retval: r1 = 00000001, r2 = 00000001
+00026c7c    142958 return from <_write_r> to <__swrite> retval: r1 = 00000001, r2 = 00000002
+00021c9c    142992 return from <__swrite> to <__sfvwrite_r> retval: r1 = 00000001, r2 = 00000002
+00022e14    143147 return from <__sfvwrite_r> to <__sprint_r> retval: r1 = 00000000, r2 = 00000001
+0000fdcc    143233 return from <__sprint_r> to <_vfprintf_r> retval: r1 = 00000000, r2 = 03fff640
+0000dfc8    143437 return from <_vfprintf_r> to <fprintf> retval: r1 = 00000020, r2 = ffffffff
+00001a6c    143461 return from <fprintf> to <main> retval: r1 = 00000020, r2 = ffffffff
+0000164c    143516 return from <main> to <_start> retval: r1 = 00000000, r2 = ffffffff
+00001134    143528 call from <_start> to <exit> args: r3 = 00000000, r4 = 00000000, r5 = 00000000, r6 = 03fff640, r7 = 00000000, r8 = 00000000
+000018ec    143578 call from <exit> to <__call_exitprocs> args: r3 = 00000000, r4 = 00000000, r5 = 00000000, r6 = 03fff640, r7 = 00000000, r8 = 00000000
+0000399c    144132 call from <__call_exitprocs> to <__fini> args: r3 = 00032740, r4 = 00000000, r5 = 00000001, r6 = 00000001, r7 = 00000001, r8 = 00000000
+00001300    144242 return from <__fini> to <__call_exitprocs> retval: r1 = 000328c4, r2 = 000328c8
+00003bec    144418 return from <__call_exitprocs> to <exit> retval: r1 = 00000000, r2 = 00000000
+00001950    144498 call from <exit> to <_cleanup_r> args: r3 = 0003246c, r4 = 0000f844, r5 = 00000001, r6 = 00000001, r7 = 00000001, r8 = 00000000
+0000f86c    144539 call from <_cleanup_r> to <_fwalk> args: r3 = 0003246c, r4 = 00024684, r5 = 00000001, r6 = 00000001, r7 = 00000001, r8 = 00000000
+000238d0    144877 call from <_fwalk> to <fclose> args: r3 = 00032758, r4 = 00000000, r5 = 00000004, r6 = 00000001, r7 = 00000001, r8 = 00000000
+000246c0    144939 call from <fclose> to <_fclose_r> args: r3 = 0003246c, r4 = 00032758, r5 = 00000004, r6 = 00000001, r7 = 00000001, r8 = 00000000
+0002443c    145120 call from <_fclose_r> to <_fflush_r> args: r3 = 0003246c, r4 = 00032758, r5 = 00000004, r6 = 00000001, r7 = 00000001, r8 = 00000000
+0001abc8    145264 call from <_fflush_r> to <__sflush_r> args: r3 = 0003246c, r4 = 00032758, r5 = 00000004, r6 = 00000001, r7 = 00000001, r8 = 00000000
+0001aad0    145506 return from <__sflush_r> to <_fflush_r> retval: r1 = 00000000, r2 = 00000000
+0001abfc    145543 return from <_fflush_r> to <_fclose_r> retval: r1 = 00000000, r2 = 00000000
+000244a4    145633 call from <_fclose_r> to <__sclose> args: r3 = 0003246c, r4 = 00032758, r5 = 00032764, r6 = 00000000, r7 = 00000001, r8 = 00000000
+00021e30    145684 call from <__sclose> to <_close_r> args: r3 = 0003246c, r4 = 00000000, r5 = 00032764, r6 = 00000000, r7 = 00000001, r8 = 00000000
+00025080    145778 call from <_close_r> to <_close> args: r3 = 00000000, r4 = 00000000, r5 = 00032764, r6 = 00000000, r7 = 00000001, r8 = 00000000
+00027058    145799 return from <_close> to <_close_r> retval: r1 = ffffffff, r2 = 00032b18
+00025118    145925 return from <_close_r> to <__sclose> retval: r1 = ffffffff, r2 = 00000009
+00021e68    145971 return from <__sclose> to <_fclose_r> retval: r1 = ffffffff, r2 = 00000009
+0002461c    146124 call from <_fclose_r> to <__sfp_lock_acquire> args: r3 = 00000000, r4 = 0003246c, r5 = 0003246c, r6 = 00000000, r7 = 00000001, r8 = 00000000
+0000f510    146144 return from <__sfp_lock_acquire> to <_fclose_r> retval: r1 = 00032758, r2 = 0003279c
+00024634    146150 call from <_fclose_r> to <__sfp_lock_release> args: r3 = 00000000, r4 = 0003246c, r5 = 0003246c, r6 = 00000000, r7 = 00000001, r8 = 00000000
+0000f810    146170 return from <__sfp_lock_release> to <_fclose_r> retval: r1 = 00032764, r2 = 0003279c
+00024670    146209 return from <_fclose_r> to <fclose> retval: r1 = ffffffff, r2 = 0003279c
+000246ec    146244 return from <fclose> to <_fwalk> retval: r1 = ffffffff, r2 = 0003279c
+000238d0    146465 call from <_fwalk> to <fclose> args: r3 = 000327c0, r4 = ffffffff, r5 = 00002889, r6 = 00000000, r7 = 00000001, r8 = 00000000
+000246c0    146527 call from <fclose> to <_fclose_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 00002889, r6 = 00000000, r7 = 00000001, r8 = 00000000
+0002443c    146708 call from <_fclose_r> to <_fflush_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 00002889, r6 = 00000000, r7 = 00000001, r8 = 00000000
+0001abc8    146852 call from <_fflush_r> to <__sflush_r> args: r3 = 0003246c, r4 = 000327c0, r5 = 00002889, r6 = 00000000, r7 = 00000001, r8 = 00000000
+0001aad0    147128 return from <__sflush_r> to <_fflush_r> retval: r1 = 00000000, r2 = 000327c0
+0001abfc    147165 return from <_fflush_r> to <_fclose_r> retval: r1 = 00000000, r2 = 000327c0
+000244a4    147263 call from <_fclose_r> to <__sclose> args: r3 = 0003246c, r4 = 000327c0, r5 = 00000000, r6 = 00000000, r7 = 00000001, r8 = 00000000
+00021e30    147314 call from <__sclose> to <_close_r> args: r3 = 0003246c, r4 = 00000001, r5 = 00000000, r6 = 00000000, r7 = 00000001, r8 = 00000000
+00025080    147408 call from <_close_r> to <_close> args: r3 = 00000001, r4 = 00000001, r5 = 00000000, r6 = 00000000, r7 = 00000001, r8 = 00000000
+00027058    147429 return from <_close> to <_close_r> retval: r1 = ffffffff, r2 = 00032b18
+00025118    147547 return from <_close_r> to <__sclose> retval: r1 = ffffffff, r2 = 00000009
+00021e68    147593 return from <__sclose> to <_fclose_r> retval: r1 = ffffffff, r2 = 00000009
+0002451c    147671 call from <_fclose_r> to <_free_r> args: r3 = 0003246c, r4 = 00032b28, r5 = 0003246c, r6 = 00000000, r7 = 00000001, r8 = 00000000
+0001add0    147762 call from <_free_r> to <__malloc_lock> args: r3 = 0003246c, r4 = 00032b28, r5 = 0003246c, r6 = 00000000, r7 = 00000001, r8 = 00000000
+000219d0    147774 return from <__malloc_lock> to <_free_r> retval: r1 = 000327c0, r2 = 000327cc
+0001af80    148064 call from <_free_r> to <__malloc_unlock> args: r3 = 0003246c, r4 = 00000409, r5 = 000004e0, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+00021a10    148076 return from <__malloc_unlock> to <_free_r> retval: r1 = 000004e0, r2 = 00020000
+0001b5dc    148105 return from <_free_r> to <_fclose_r> retval: r1 = 000004e0, r2 = 00020000
+0002461c    148217 call from <_fclose_r> to <__sfp_lock_acquire> args: r3 = 00000000, r4 = 00000409, r5 = 000004e0, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+0000f510    148237 return from <__sfp_lock_acquire> to <_fclose_r> retval: r1 = 000327c0, r2 = 00032804
+00024634    148243 call from <_fclose_r> to <__sfp_lock_release> args: r3 = 00000000, r4 = 00000409, r5 = 000004e0, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+0000f810    148263 return from <__sfp_lock_release> to <_fclose_r> retval: r1 = 000327cc, r2 = 00032804
+00024670    148302 return from <_fclose_r> to <fclose> retval: r1 = ffffffff, r2 = 00032804
+000246ec    148337 return from <fclose> to <_fwalk> retval: r1 = ffffffff, r2 = 00032804
+000238d0    148550 call from <_fwalk> to <fclose> args: r3 = 00032828, r4 = ffffffff, r5 = 0000201a, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+000246c0    148612 call from <fclose> to <_fclose_r> args: r3 = 0003246c, r4 = 00032828, r5 = 0000201a, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+0002443c    148793 call from <_fclose_r> to <_fflush_r> args: r3 = 0003246c, r4 = 00032828, r5 = 0000201a, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+0001abc8    148937 call from <_fflush_r> to <__sflush_r> args: r3 = 0003246c, r4 = 00032828, r5 = 0000201a, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+0001aad0    149213 return from <__sflush_r> to <_fflush_r> retval: r1 = 00000000, r2 = 00032828
+0001abfc    149250 return from <_fflush_r> to <_fclose_r> retval: r1 = 00000000, r2 = 00032828
+000244a4    149348 call from <_fclose_r> to <__sclose> args: r3 = 0003246c, r4 = 00032828, r5 = 00000000, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+00021e30    149399 call from <__sclose> to <_close_r> args: r3 = 0003246c, r4 = 00000002, r5 = 00000000, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+00025080    149493 call from <_close_r> to <_close> args: r3 = 00000002, r4 = 00000002, r5 = 00000000, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+00027058    149514 return from <_close> to <_close_r> retval: r1 = ffffffff, r2 = 00032b18
+00025118    149632 return from <_close_r> to <__sclose> retval: r1 = ffffffff, r2 = 00000009
+00021e68    149678 return from <__sclose> to <_fclose_r> retval: r1 = ffffffff, r2 = 00000009
+0002461c    149839 call from <_fclose_r> to <__sfp_lock_acquire> args: r3 = 00000000, r4 = 0003246c, r5 = 0003246c, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+0000f510    149859 return from <__sfp_lock_acquire> to <_fclose_r> retval: r1 = 00032828, r2 = 0003286c
+00024634    149865 call from <_fclose_r> to <__sfp_lock_release> args: r3 = 00000000, r4 = 0003246c, r5 = 0003246c, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+0000f810    149885 return from <__sfp_lock_release> to <_fclose_r> retval: r1 = 00032834, r2 = 0003286c
+00024670    149924 return from <_fclose_r> to <fclose> retval: r1 = ffffffff, r2 = 0003286c
+000246ec    149959 return from <fclose> to <_fwalk> retval: r1 = ffffffff, r2 = 0003286c
+00023998    150129 return from <_fwalk> to <_cleanup_r> retval: r1 = ffffffff, r2 = 0003274c
+0000f89c    150173 return from <_cleanup_r> to <exit> retval: r1 = ffffffff, r2 = 0003274c
+00001968    150203 call from <exit> to <_exit> args: r3 = 00000000, r4 = ffffffff, r5 = ffffffff, r6 = 00032b20, r7 = 00032f2c, r8 = 000000d8
+000270c4    150258 return from <_exit> to  retval: r1 = 00000000, r2 = 00000000
