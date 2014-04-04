@@ -23,7 +23,7 @@ void insertion_sort(int*arr, int size)
   int i,j,v;
   j = 1;
 
-  /* ai: loop (here) max inf;  */
+  /* ai: loop (here) max 32;  */
   while (j < size)
     {
       /* invariant: sorted (a[0..j-1]) */
@@ -31,7 +31,7 @@ void insertion_sort(int*arr, int size)
 
       i = j - 1;
 
-      /* ai: loop (here) max inf;  */
+      /* ai: loop (here) max 31;  */
       while (i >= 0)
         {
           if(arr[i]<v) break;
