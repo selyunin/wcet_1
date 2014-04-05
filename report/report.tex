@@ -56,6 +56,35 @@ zeros). Sorting an array of random elements takes `usually' 17/18k cycles.
 \subsection{Solution}
 % TODO
 
+\begin{itemize}
+
+\item[A1:]
+
+The results of WCET static analysis, obtained with \texttt{a3patmos}
+tool (column 2), are summarized in the table below:
+
+\begin{tabular}{ | r | r | r |}
+\hline
+Array size & WCET (cycles) & Measured \\\hline
+8  & 6512 & - \\\hline
+16 & 22888 & - \\\hline
+32 & 46904 & 30083 \\\hline
+64 & 330808 & - \\\hline
+\end{tabular}
+
+For an array of 32 elements \texttt{a3patmos} gives result which is
+approximately 1.5 times larger then the largest measurement. 
+If the 'triangulation' structure of the loops is not
+imposed as a constraint, the result is even more
+pessimistic (85.5k cycles for array size of 32).
+
+\item[A2:]
+
+\item[A3:]
+
+\item[A4:] 
+
+\end{itemize}
 \subsection{Listings}
 % TODO
 
