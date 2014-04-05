@@ -5,8 +5,8 @@
 
 \title{Assignment 1}
 
-\author{Vorname1 Nachname1, \matrnr 0000000   \\
-         {\small e00000000@vmars.tuwien.ac.at} \\
+\author{Konstantin Selyunin, \matrnr 1228206   \\
+         {\small e1228206@student.tuwien.ac.at} \\
         Vorname2 Nachname2, \matrnr 99012345 \\
          {\small e99012345@student.tuwien.ac.at}
 }
@@ -26,6 +26,22 @@
 
 \subsection{Solution}
 % TODO
+\begin{itemize}
+\item[A1:]
+For an array of size $N$ the labeled statement
+\texttt{insertion\_sort\_move} might be executed from $0$ (sorted) to
+$N\times(N-1)/2$ (reverse order) times (in our case for an array of 32 
+elements from 0 to 496). 
+
+\item[A2:] How many test runs do you need to cover all possible paths through
+           the function?
+\item[A3:] 
+The minimum execution time (in processor cycles) is $t_1 = 5477$
+for the sorted array, the maximum is $t_2 = 30083$ for elements in
+reverse order as well as for an array of equal elements (e.g. all
+zeros). Sorting an array of random elements takes `usually' 17/18k cycles.
+
+\end{itemize}
 
 \subsection{Listings}
 % TODO
