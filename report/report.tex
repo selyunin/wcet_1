@@ -84,15 +84,18 @@ imposed as a constraint, the result is even more
 pessimistic (85.5k cycles for array size of 32).
 
 \item[A2:]
-  Number of inversions in the input array. In order to take it into
-  account during static WCET analysis, we need to add linear
-  constraint.
+Number of inversions in the input array has significant impact on
+the execution time. In order to take it into
+account during static WCET analysis, we add linear
+constraint for maximum number of inversions in the inner loop.
 
 \item[A3:]
-  In this task we define annotation in a separate file (aiT.ais, see
-  supplement).
-The difference between execution times and the WCET are summarized in
-the Figure~\ref{fig:opt_compare}.
+In this task we define annotations in a separate file (aiT.ais, see
+supplement).
+The difference between execution times for the test cases 
+and the WCET are summarized in the Figure~\ref{fig:opt_compare}.
+Optimizations performed by compiler  reduce execution
+time by approximately factor of 3.
 
 \begin{figure}[hb!]
   \centering
