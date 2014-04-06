@@ -1,9 +1,11 @@
 # No optimization, so it is possible to use aiT's source code annotations
 OPT:=-O0
+OPT1:=-O1
 
 DEFS:=-DVERBOSE
 
 CFLAGS:=-std=gnu99 -Wall -g $(DEFS) $(OPT) -Xopt -disable-inlining
+CFLAGS_O1:=-std=gnu99 -Wall -g $(DEFS) $(OPT1) -Xopt -disable-inlining
 
 TARGET=insertion_sort
 
@@ -31,9 +33,18 @@ $(TARGET).dis: $(TARGET).elf
 $(TARGET).elf: $(SRCS)
 	patmos-clang $(CFLAGS) $(CFG_CLANG) -o $(TARGET).elf $^
 
-
 $(TARGET).trace: $(TARGET).elf
 	pasim $< --debug-fmt=trace --debug=0 --debug-file=$@ $(CFG_SIMULATOR)
+
+$(TARGET)_O1.elf: $(SRCS)
+	patmos-clang $(CFLAGS_O1) $(CFG_CLANG) -o $(TARGET)_O1.elf $^
+
+$(TARGET)_O1.dis: $(TARGET)_O1.elf
+	patmos-llvm-objdump -d -t -fpatmos-print-bytes=call $< > $@
+
+$(TARGET)_O1.trace: $(TARGET)_O1.elf
+	pasim $< --debug-fmt=trace --debug=0 --debug-file=$@ $(CFG_SIMULATOR)
+
 
 
 clean:

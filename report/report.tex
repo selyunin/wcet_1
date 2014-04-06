@@ -1,7 +1,10 @@
 \documentclass[12pt,a4paper,titlepage,oneside]{article}
 \usepackage{report}
+\usepackage{graphicx}
 \usepackage{url}
 \usepackage{amsmath}
+
+
 
 \title{Assignment 1}
 
@@ -33,13 +36,15 @@ For an array of size $N$ the labeled statement
 $N\times(N-1)/2$ (reverse order) times (in our case for an array of 32 
 elements from 0 to 496). 
 
-\item[A2:] How many test runs do you need to cover all possible paths through
-           the function?
+\item[A2:] 
+  TODO
+           
 \item[A3:] 
 The minimum execution time (in processor cycles) is $t_1 = 5477$
 for the sorted array, the maximum is $t_2 = 30083$ for elements in
 reverse order as well as for an array of equal elements (e.g. all
 zeros). Sorting an array of random elements takes `usually' 17/18k cycles.
+For details see Figure~\ref{fig:opt_compare}.
 
 \end{itemize}
 
@@ -79,8 +84,25 @@ imposed as a constraint, the result is even more
 pessimistic (85.5k cycles for array size of 32).
 
 \item[A2:]
+  Number of inversions in the input array. In order to take it into
+  account during static WCET analysis, we need to add linear
+  constraint.
 
 \item[A3:]
+  In this task we define annotation in a separate file (aiT.ais, see
+  supplement).
+The difference between execution times and the WCET are summarized in
+the Figure~\ref{fig:opt_compare}.
+
+\begin{figure}[hb!]
+  \centering
+  \includegraphics[width=4in]{q2_3}
+  \caption
+  {Execution time measurements and the WCET for \texttt{-O0} and
+  \texttt{-O1}}
+	\label{fig:opt_compare}
+\end{figure}
+
 
 \item[A4:] 
 
