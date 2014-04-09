@@ -37,7 +37,57 @@ $N\times(N-1)/2$ (reverse order) times (in our case for an array of 32
 elements from 0 to 496). 
 
 \item[A2:] 
-  TODO
+
+  Assume that the length of the input array is $N$.
+
+  After an inspection of the sorting algorithm one can see that the
+  algoritm behaviour does not depend on the exact values of the input
+  array.
+  It only depends on the relations between the array elements.
+  The reason is that the array elements are only compared by
+  relational operarors like ``$>$'' and the only operation invoked on
+  array elements is copying.
+  This means that control-flow path is the same for two arrays of
+  lenght $N$ with the same distribution of elements inversions.
+
+  In the very general case two arbitrary elements $a$ and $b$ of the
+  input array can be related as $a<b$, $a=b$ or $a>b$, and the
+  execution path might be influenced by this fact in three different
+  ways.
+  The total number of permutations, that take into account equalities
+  and inversions, for arrays of length $N$ can be expressed as
+
+  \begin{equation}
+	\sum_{n=1}^N \ \ \sum_{\substack{
+	  \bigwedge_{i=1}^n m_i \geq 1 
+	  \\ \sum_{i=1}^n m_i = N}} \binom N {m_1, m_2, \ldots, m_n}.
+	  \label{equ:genpath}
+	\end{equation}
+
+	Potentially, each of these arrays might cause a sorting algorithm
+	to follow a unique execution path.
+	However, in the case of insertion sort algorithm we know that
+	relations $a<b$ and $a=b$ cannot be distinguished.
+	This reduces the number of paths accordint to~(\ref{equ:genpath})
+	to the number of $N!$.
+	A simpler explanation can be provided in this case.
+	When the insertion sort algorithm processes the element at the
+	position~$i$ ($1 \leq i \leq N$), all the elements at the previous
+	positions $1\ldots i-1$ are already sorted.
+	For the element $i$ there are now exactly $i$ positions to be
+	placed.
+	This adds a factor $i$ to the number of total pths that should be
+	executed.
+	Hence, we get for the total number of path an expression
+
+	%\begin{equation}
+	$$
+	  \prod_{i=1}^N i = N!.
+	$$
+	%\end{equation}
+
+
+
            
 \item[A3:] 
 The minimum execution time (in processor cycles) is $t_1 = 5477$
@@ -108,6 +158,15 @@ time by approximately factor of 3.
 
 
 \item[A4:] 
+  TODO
+
+\begin{figure}[hb!]
+  \centering
+  \includegraphics[width=4in]{graph}
+  \caption
+  {Graph for constructing IPET problem}
+	\label{fig:IPET}
+\end{figure}
 
 \end{itemize}
 \subsection{Listings}
