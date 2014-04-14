@@ -4,6 +4,12 @@
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0.133,0.545,0.133}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.627,0.126,0.941}
 
 \title{Assignment 1}
 
@@ -99,6 +105,7 @@ For details see Figure~\ref{fig:opt_compare}.
 
 \subsection{Listings}
 % TODO
+\input{listing1.tex}
 
 %------------------------------------------------------------------
 \newpage
@@ -191,23 +198,6 @@ The cost of \texttt{while.end12} block is assigned to the new edge.
   \caption{Control-Flow Graph for ILP problem formulation}
   \label{fig:ilp}
 \end{figure}
-%\begin{figure}
-%	\begin{tabular}{l|l}
-%		\hline
-%		Edge Cost & Basic Block \\
-%		\hline
-%		$t_1$ & entry \\
-%		$t_2 = t_3$ & while.cond \\
-%		$t_4$ & while.body \\
-%		$t_5 = t_6$ & while.cond1 \\
-%		$t_7 = t_8$ & while.body3 \\
-%		$t_9$ & if.then \\
-%		$t_{10}$ & if.end \\
-%		$t_{11}$ & while.end \\
-%		$t_{12}$ & while.end12 \\
-%		\hline
-%	\end{tabular}
-%\end{figure}
 
 A cost value and a number of executions is associated with each edge of the graph, such that the edge $i$ has the cost $t_i$ and the number of executions $x_i$ correspondingly.
 The ILP problem consists of the objective function and the constraints.
