@@ -158,302 +158,219 @@ time by approximately factor of 3.
 
 
 \item[A4:] 
-  \item[A4:]
-
+ \item[A4:]
 In order to perform the analysis we build a directed graph that assigns execution time to edges but not vertices~(Fig.~\ref{fig:ilp}).
-
 This is done by moving execution time from each block (corresponding to a vertex) to its outgoing edges.
-
 The same value (equal to the corresponding block execution cost) is assigned to all outgoing edges.
-
 Since we do not have outgoing edges form the block \texttt{while.end12}, we add one more vertex to the graph (which we call \texttt{exit}) and an edge between vertices \texttt{while.end12} and \texttt{exit}.
-
 The cost of \texttt{while.end12} block is assigned to the new edge.
-
 \begin{figure}
-\centering
-\begin{minipage}[c]{.6\linewidth}
-\centering
-\includegraphics[width=0.90\linewidth]{../assignment/cfg_insertion_sort}
-\end{minipage}%
-\begin{minipage}[c]{.3\linewidth}
-\centering
-\small
-\begin{tabular}{l|l}
-\hline
-Edge Cost & Basic Block \\
-\hline
-$t_1$ & entry \\
-$t_2 = t_3$ & while.cond \\
-$t_4$ & while.body \\
-$t_5 = t_6$ & while.cond1 \\
-$t_7 = t_8$ & while.body3 \\
-$t_9$ & if.then \\
-$t_{10}$ & if.end \\
-$t_{11}$ & while.end \\
-$t_{12}$ & while.end12 \\
-\hline
-\end{tabular}
-\end{minipage}
-\caption{Control-Flow Graph for ILP problem formulation}
-\label{fig:ilp}
+  \centering
+  \begin{minipage}[c]{.6\linewidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{graph}
+  \end{minipage}%
+  \begin{minipage}[c]{.3\linewidth}
+    \centering
+    \small
+	\begin{tabular}{l|l}
+		\hline
+		Edge Cost & Basic Block \\
+		\hline
+		$t_1$ & entry \\
+		$t_2 = t_3$ & while.cond \\
+		$t_4$ & while.body \\
+		$t_5 = t_6$ & while.cond1 \\
+		$t_7 = t_8$ & while.body3 \\
+		$t_9$ & if.then \\
+		$t_{10}$ & if.end \\
+		$t_{11}$ & while.end \\
+		$t_{12}$ & while.end12 \\
+		\hline
+	\end{tabular}
+  \end{minipage}
+  \caption{Control-Flow Graph for ILP problem formulation}
+  \label{fig:ilp}
 \end{figure}
-
 %\begin{figure}
-
-% \begin{tabular}{l|l}
-
-% \hline
-
-% Edge Cost & Basic Block \\
-
-% \hline
-
-% $t_1$ & entry \\
-
-% $t_2 = t_3$ & while.cond \\
-
-% $t_4$ & while.body \\
-
-% $t_5 = t_6$ & while.cond1 \\
-
-% $t_7 = t_8$ & while.body3 \\
-
-% $t_9$ & if.then \\
-
-% $t_{10}$ & if.end \\
-
-% $t_{11}$ & while.end \\
-
-% $t_{12}$ & while.end12 \\
-
-% \hline
-
-% \end{tabular}
-
+%	\begin{tabular}{l|l}
+%		\hline
+%		Edge Cost & Basic Block \\
+%		\hline
+%		$t_1$ & entry \\
+%		$t_2 = t_3$ & while.cond \\
+%		$t_4$ & while.body \\
+%		$t_5 = t_6$ & while.cond1 \\
+%		$t_7 = t_8$ & while.body3 \\
+%		$t_9$ & if.then \\
+%		$t_{10}$ & if.end \\
+%		$t_{11}$ & while.end \\
+%		$t_{12}$ & while.end12 \\
+%		\hline
+%	\end{tabular}
 %\end{figure}
 
-
 A cost value and a number of executions is associated with each edge of the graph, such that the edge $i$ has the cost $t_i$ and the number of executions $x_i$ correspondingly.
-
 The ILP problem consists of the objective function and the constraints.
-
 The objective function is maximization of the execution time:
-
 \begin{equation}
 \max_{x_1, x_2, \ldots x_{12}} \ \sum_{i=1}^{12} x_i t_i.
 \label{equ:objective}
 \end{equation}
 
-
 The constraints reflect the facts we know about control-flow of the function.
-
 The node constraints describe the fact that each program block is entered and left exactly the same number of times:
-
 \begin{equation}
-\left.\begin{aligned}
-x_2 + x_3 &= x_1 + x_{11}\\
-x_2 &= x_4\\
-x_4 + x_{10} &= x_5 + x_6\\
-x_5 &= x_7 + x_8\\
-x_7 &= x_9\\
-x_8 &= x_{10}\\
-x_6 + x_9 &= x_{11}\\
-x_3 &= x_{12}
-\end{aligned}\right.
+	\left.\begin{aligned}
+		x_2 + x_3	&= x_1 + x_{11}\\
+		x_2			&= x_4\\
+		x_4 + x_{10}	&= x_5 + x_6\\
+		x_5			&= x_7 + x_8\\
+		x_7			&= x_9\\
+		x_8			&= x_{10}\\
+		x_6 + x_9	&= x_{11}\\
+		x_3			&= x_{12}
+	\end{aligned}\right.
 \label{equ:node}
 \end{equation}
-
 This control flow constraints itself cannot give a finite solution because of cycles in the graph.
-
 Thus, we add a requirement of a single function entrance and function exit or infinite looping:
-
 \begin{equation}
-\left.\begin{aligned}
-x_1 &= 1\\
-x_{12} &\leq 1
-\end{aligned}\right.
+	\left.\begin{aligned}
+		x_1			&= 1\\
+		x_{12}		&\leq 1
+	\end{aligned}\right.
 \label{equ:single}
 \end{equation}
-
 This additional requirements still do not make the solution finite.
-
 We should add the constraints that describe loop bounds.
-
 We suppose that the length of the input array is $N$.
-
 From the previously done analysis we know that in this case the outer loop is executed exactly $N$ times and the inner loop---not more than $N(N-1)/2$.
-
 Hence, we add
-
 \begin{equation}
-\left.\begin{aligned}
-x_{11} &= N\\
-x_{10} &\leq N(N-1)/2
-\end{aligned}\right.
+	\left.\begin{aligned}
+		x_{11}		&= N\\
+		x_{10}		&\leq N(N-1)/2
+	\end{aligned}\right.
 \label{equ:loops}
 \end{equation}
-
 Finally, there are physical feasibility constraints:
-
 \begin{equation}
-x_i \in \mathbb{N}, \quad \mathrm{where}\ 1 \leq i \leq 12
+		x_i \in \mathbb{N}, \quad \mathrm{where}\ 1 \leq i \leq 12
 \label{equ:feasibility}
 \end{equation}
-
 All the constraints (\ref{equ:objective}--\ref{equ:feasibility}) formulate the ILP problem for IPET analysis.
-
 Equation (\ref{equ:feasibility}) should be passed to the solver through the type information, i.e. the solver will treat the variables as natural numbers implicitly.
 
-
 The problem can be solved every time for each specific $N$ and $t_{1} \ldots t_{12}$.
-
 However, the intuition and previous analysis say that the WCET should always correspond to the case when the inner loop is executed $N(N-1)/2$ times.
-
 Since the problem is not large, we can try to prove it analytically.
 
-
 First of all, eliminate the redundant variables in node constraints:
-
 \begin{equation}
-\left.\begin{aligned}
-x_2 + x_3 &= 1 + N\\
-x_2 + x_8 &= x_5 + x_6\\
-x_5 &= x_7 + x_8\\
-x_6 + x_7 &= N\\
-\end{aligned}\right.
+	\left.\begin{aligned}
+		x_2 + x_3	&= 1 + N\\
+		x_2 + x_8	&= x_5 + x_6\\
+		x_5			&= x_7 + x_8\\
+		x_6 + x_7	&= N\\
+	\end{aligned}\right.
 \label{equ:node_simpl}
 \end{equation}
-
 and prove termination of the \texttt{insertion\_sort} function.
-
 Termination is formulated as $x_{12} = 1$.
-
 From $x_3 = x_{12}$ and $x_{12} \leq 1$ we conclude $x_3 \leq 1$, i.e. we should prove that $x_3 = 1$ but not $x_3 = 0$.
 
-
 Suppose that $x_3 = 0$.
-
 From (\ref{equ:node_simpl}) we have
-
 \begin{equation*}
-\left\{\begin{aligned}
-x_2 &= 1 + N\\
-x_2 + x_8 &= x_5 + x_6\\
-x_5 &= x_7 + x_8\\
-x_6 + x_7 &= N\\
-\end{aligned}\right.
+	\left\{\begin{aligned}
+		x_2			&= 1 + N\\
+		x_2 + x_8	&= x_5 + x_6\\
+		x_5			&= x_7 + x_8\\
+		x_6 + x_7	&= N\\
+	\end{aligned}\right.
 \Rightarrow
-\left\{\begin{aligned}
-1 + N + x_8 &= x_7 + x_8 + x_6\\
-x_6 + x_7 &= N\\
-\end{aligned}\right.
+	\left\{\begin{aligned}
+		1 + N + x_8	&= x_7 + x_8 + x_6\\
+		x_6 + x_7	&= N\\
+	\end{aligned}\right.
 \Rightarrow
-\left\{\begin{aligned}
-x_6 + x_7 &= N+1\\
-x_6 + x_7 &= N\\
-\end{aligned}\right.
+	\left\{\begin{aligned}
+		x_6 + x_7 	&= N+1\\
+		x_6 + x_7	&= N\\
+	\end{aligned}\right.
 \end{equation*}
-
 which is a contradiction.
-
 Thus, $x_3 = x_{12} = 1$.
-
 Taking this into account and $x_8 = x_{10} \leq N(N-1)/2$ we can further reduce our set of constraints.
-
 Additionally, we can remove constants from the objective function.
-
 After simplification the ILP problem looks as
-
 \begin{equation}
 \begin{aligned}
-\max_{x_5, x_6, x_7, x_8} \left(t_5 x_5 + t_5 x_6 + (t_7+t_9)x_7 + (t_7+t_{10}) x_8 \right)\\
-\left.\begin{aligned}
-N + x_8 &= x_5 + x_6\\
-x_5 &= x_7 + x_8\\
-x_6 + x_7 &= N\\
-x_8 &\leq N(N-1)/2
-\end{aligned}\right.
+	\max_{x_5, x_6, x_7, x_8} \left(t_5 x_5 + t_5 x_6 + (t_7+t_9)x_7 + (t_7+t_{10}) x_8 \right)\\
+	\left.\begin{aligned}
+		N + x_8		&= x_5 + x_6\\
+		x_5			&= x_7 + x_8\\
+		x_6 + x_7	&= N\\
+		x_8			&\leq N(N-1)/2
+	\end{aligned}\right.
 \end{aligned}
 \label{equ:ilp}
 \end{equation}
-
 and we know that $x_1 = x_3 = x_{12} = 1$, $x_2 = x_4 = x_{11} = N$, $x_9 = x_7$ and $x_{10} = x_8$.
 
-
 Suppose that we have a solution $\{x_5, x_6, x_7, x_8\}$ of (\ref{equ:ilp}), for which $x_8 < N(N-1)/2$.
-
 One can easily see that this solution is not the optimal.
-
 The solution $\{x'_5 = x_5+1, x'_6 = x_6, x'_7 = x_7, x'_8 = x_8+1\}$ gives a larger value of the optimization function under assumption $t_5 + t_7 + t_{10} > 0$.
-
 For any realistic implementation the assumption is true.
-
 We can increment $x_5$ and $x_8$ until $x_8 = N(N-1)/2$.
-
 And this will give the maximum value of the optimization function for any particular $x_6$ and $x_7$.
-
 Thus, we conclude $x_8 = N(N-1)/2$.
 
-
-Now the ILP problem looks as
-
+Now the ILP problem looks as 
 \begin{equation}
 \begin{aligned}
-\max_{x_5, x_6, x_7} \left(t_5 x_5 + t_5 x_6 + (t_7+t_9)x_7 \right)\\
-\left.\begin{aligned}
-N + N(N-1)/2 &= x_5 + x_6\\
-x_5 &= x_7 + N(N-1)/2\\
-x_6 + x_7 &= N\\
-\end{aligned}\right.
+	\max_{x_5, x_6, x_7} \left(t_5 x_5 + t_5 x_6 + (t_7+t_9)x_7 \right)\\
+	\left.\begin{aligned}
+		N + N(N-1)/2	&= x_5 + x_6\\
+		x_5			&= x_7 + N(N-1)/2\\
+		x_6 + x_7	&= N\\
+	\end{aligned}\right.
 \end{aligned}
 \label{equ:ilp2}
 \end{equation}
-
 where the last constraint is redundant (it is a sum of two other constraints).
 
-
 To solve problem (\ref{equ:ilp2}) we express
-
 \begin{equation*}
-\left.\begin{aligned}
-x_6 = N(N+1)/2 - x_5\\
-x_7 = x_5 - N(N-1)/2
-\end{aligned}\right.
+	\left.\begin{aligned}
+		x_6 = N(N+1)/2 - x_5\\
+		x_7 = x_5 - N(N-1)/2
+	\end{aligned}\right.
 \end{equation*}
-
 and put it to the optimization function:
-
 \begin{equation*}
-\left.\begin{aligned}
-\max_{x_5, x_6, x_7, x_8} \left(t_5x_5 + t_5x_6 + (t_7+t_9)x_7\right) =\\
-\max_{x_5} \left(t_5x_5 + t_5\left(\frac{N(N+1)}2 - x_5\right) + (t_7+t_9)\left(x_5 - \frac{N(N-1)}2\right)\right) \sim\\
-\max_{x_5} \left(t_5x_5 - t_5x_5 + (t_7+t_9)x_5\right) =\\
-\max_{x_5} \left((t_7+t_9)x_5\right) \sim\\
-\max_{x_5} x_5
-\end{aligned}\right.
+	\left.\begin{aligned}
+		\max_{x_5, x_6, x_7, x_8} \left(t_5x_5 + t_5x_6 + (t_7+t_9)x_7\right) =\\
+		\max_{x_5} \left(t_5x_5 + t_5\left(\frac{N(N+1)}2 - x_5\right) + (t_7+t_9)\left(x_5 - \frac{N(N-1)}2\right)\right) \sim\\
+		\max_{x_5} \left(t_5x_5 - t_5x_5 + (t_7+t_9)x_5\right) =\\
+		\max_{x_5} \left((t_7+t_9)x_5\right) \sim\\
+		\max_{x_5} x_5
+	\end{aligned}\right.
 \end{equation*}
-
 under assumption $t_7+t_9 > 0$, which is true for any realistic implementation.
 
-
 In order to maximize our optimization function we should maximize $x_5$, but this is infinity.
-
 At this point the feasibility constraint $x_6 \geq 0$ comes into a play:
-
 \begin{equation*}
 x_6 = N(N+1)/2 - x_5 \geq 0
 \quad\Rightarrow\quad
 x_5 \leq N(N+1)/2
 \end{equation*}
-
 Clearly, the maximal possible value of $x_5$ is $N(N+1)/2$.
-
 Finally, we find $x_6 = 0$, $x_7 = N$.
 
-
 Our solution looks as following\\
-
 \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
 \hline
 $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & $x_6$ & $x_7$ & $x_8$ & $x_9$ & $x_{10}$ & $x_{11}$ & $x_{12}$ \\
@@ -462,32 +379,26 @@ $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & $x_6$ & $x_7$ & $x_8$ & $x_9$ & $x_{10}$
 $1$ & $N$ & $1$ & $N$ & $\frac{N(N+1)}2$ & $0$ & $N$ & $\frac{N(N-1)}2$ & $N$ & $\frac{N(N-1)}2$ & $N$ & $1$ \\
 \hline
 \end{tabular}\\
-
 and the WCET is $\sum_{i=1}^{12} x_i t_i$.
-
 The solution does not depend on the exact values of $t_1, t_2, \ldots t_{12}$, only assumptions $t_5 + t_7 + t_{10} > 0$ and $t_7+t_9 > 0$ are important.
-
 For $N=32$ and cost values given in Fig.~\ref{fig:cfg.insertion_sort} the solution is\\
-
 \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c}
 \hline
 $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & $x_6$ & $x_7$ & $x_8$ & $x_9$ & $x_{10}$ & $x_{11}$ & $x_{12}$ & WCET\\
 \hline
-1 & 32 & 1 & 32 & 528 & 0 & 32 & 496 & 32 & 496 & 32 & 1 & 19571\\
+1 & 32 & 1 & 32 & 528 & 0 & 32 & 496 & 32 & 496 & 32 & 1  & 19571\\
 \hline
 \end{tabular}\\
-
 The same values were obtaines with the \texttt{lp\_solve} solver that was run on the originaly composed constraints (\ref{equ:objective}--\ref{equ:feasibility}).
 
-\begin{figure}[hb!]
-  \centering
-  \includegraphics[width=4in]{graph}
-  \caption
-  {Graph for constructing IPET problem}
-	\label{fig:IPET}
-\end{figure}
+
 
 \end{itemize}
+
+
+
+
+
 \subsection{Listings}
 % TODO
 
