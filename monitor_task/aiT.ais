@@ -8,5 +8,5 @@ label 0x2800 = "merge_samples_buffer_get";
 
 
 flow  "merge_samples_interpolate" <= 52 ;
-flow  "merge_samples_valid_values" <= 13;
-flow "merge_samples_buffer_get" <= 13;
+flow  "merge_samples_valid_values" <= 64;
+flow "merge_samples_buffer_get" <= 32;

@@ -88,19 +88,19 @@ void merge_samples(input_t* in, sample_buffer_t* sbuf)
     /* If the sample is not missing, interpolate the ones before if the range is acceptable */
     if(! IS_VALUE_MISSING(x))
     {
-	//	cnt_first_condition++;
+		//cnt_first_condition++;
       /* Only interpolate if we interpolate at most MAX_CONSECUTIVE_MISSING samples */
       int missing_samples = i - valid - 1;
       if(missing_samples > 0 && missing_samples <= MAX_CONSECUTIVE_MISSING)
       {
-	//	  cnt_second_condition++;
+		  //cnt_second_condition++;
         /* Calculate interpolated value for all samples in the range [valid+1,i-1] */
         int16_t z = sample_buffer_get(sbuf,valid);        
         for(j = i-1; j > valid; --j)
         { 
 	  /* ai: loop here max inf; */
           /* ai: label here = "merge_samples_interpolate"; */
-	//		cnt_inner_loop++;
+			//cnt_inner_loop++;
           int16_t y = iinterpolate16(valid,z,i,x,j);
           sample_buffer_set(sbuf,j, y);
         }
@@ -111,13 +111,18 @@ void merge_samples(input_t* in, sample_buffer_t* sbuf)
   /* increment ring buffer index */
   sample_buffer_set_valid(sbuf, valid);
   sample_buffer_incr_ptr(sbuf, cnt);
-	/*
-  printf("cnt_outer_loop = %d\n", cnt_outer_loop);
+
+  /*
+  for(i = 0; i < cnt; i++)
+  { 
+	  printf("%d\n", xs[i]);
+  }
+  printf("\ncnt_outer_loop = %d\n", cnt_outer_loop);
   printf("cnt_first_condition = %d\n", cnt_first_condition);
   printf("cnt_second_condition = %d\n", cnt_second_condition);
   printf("cnt_inner_loop = %d\n", cnt_inner_loop);
   printf("$$$$$$$$$$$$$$$$$$$$$$\n");
-	*/
+  */
   return;
 }
 
