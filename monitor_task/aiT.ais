@@ -1,0 +1,12 @@
+# enter AIS annotations here or use the AIS Wizard from the context menu
+instruction "merge_samples" is entered with @inputcount = 64;
+loop "merge_samples" + 1 loop max @inputcount begin;
+loop "merge_samples" + 2 loop max 4 begin;
+label 0x2878 = "merge_samples_interpolate";
+label 0x2798 = "merge_samples_valid_values";
+label 0x2800 = "merge_samples_buffer_get";
+
+
+flow  "merge_samples_interpolate" <= 52 ;
+flow  "merge_samples_valid_values" <= 13;
+flow "merge_samples_buffer_get" <= 13;

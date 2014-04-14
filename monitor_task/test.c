@@ -11,6 +11,7 @@
 #include <inttypes.h>
 #include "task.h"
 #include "test_data.h"
+#include "measure.h"
 
 #ifdef VERBOSE
 /* Console Output */
@@ -87,7 +88,13 @@ void test_merge_samples(sample_buffer_t* sbuf)
         input_buffer[j] = VALUE_MISSING;
       }
     }
+
+	cycles_t t1 = 0;
+	MEASUREMENT_START(t1);
     merge_samples(&input, sbuf);
+	MEASUREMENT_STOP(t1);
+	MEASUREMENT_DUMP(t1);
+
     print_sample_buffer("Sample Buffer", sbuf);
   }
   for(i = 0 ; i < ticks2; i++)
@@ -97,7 +104,13 @@ void test_merge_samples(sample_buffer_t* sbuf)
     for(j = 0; j < input.input_count; j++, cnt++) {
       input_buffer[j] = (cnt << 4);
     }
+
+	cycles_t t1 = 0;
+	MEASUREMENT_START(t1);
     merge_samples(&input, sbuf);
+	MEASUREMENT_STOP(t1);
+	MEASUREMENT_DUMP(t1);
+
     print_sample_buffer("Sample Buffer", sbuf);
   }
 }
