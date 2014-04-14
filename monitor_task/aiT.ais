@@ -1,0 +1,23 @@
+instruction "fft" is entered with @samplecount = 64;
+loop "fft" + 1 loop max 5 begin;
+loop "fft" + 2 loop max @samplecount begin;
+loop "fft" + 3 loop max @samplecount begin;
+loop "fft" + 4 loop max @samplecount begin;
+
+instruction "fp_radix2fft_withscaling" is entered with @n = 64;
+instruction "fp_radix2fft_withscaling" is entered with @t = 6;
+loop "fp_radix2fft_withscaling" + 1 loop max @t begin;
+loop "fp_radix2fft_withscaling" + 2 loop max 32 begin;
+loop "fp_radix2fft_withscaling" + 3 loop max 32 begin;
+
+#second loop in fp_radix2fft_withscaling -- flow at most 63 times
+label 0x1be8 = "radix2fft_second_loop";
+flow "radix2fft_second_loop" <= 63 ("fp_radix2fft_withscaling");
+
+#third loop in fp_radix2fft_withscaling -- flow at most 192 times
+label 0x19a4 = "fp_radix2fft_withscaling_body";
+flow "fp_radix2fft_withscaling_body" <= 192 ("fp_radix2fft_withscaling");
+
+
+instruction "bitreverse" is entered with @n = 64;
+loop "bitreverse" + 1 loop max @n begin;
