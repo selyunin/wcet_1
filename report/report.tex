@@ -418,6 +418,9 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
   Measurements for test bench implemented in
   \texttt{main.c:test\_merge\_samples()} are shown in the
   Figure~\ref{fig:mergeSamples}.
+	The result of static analysis with \texttt{a3patmos} gives the
+	following worst case bound:
+  $$\text{WCET}_{\text{merge\_samples}} = TODO\enskip TODO\enskip TODO$$
 
 \begin{figure}[hb!]
   \centering
@@ -445,10 +448,16 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
 
 \item[A2:] 
   Since \texttt{test\_fft()} provides only one execution of
-  \texttt{fft()} we use samples from \texttt{merge\_samples()} to
-  perform more elaborate testing.
+  \texttt{fft(\ldots)} we modified  \texttt{merge\_samples()} to
+  perform more elaborate testing. We invoke \texttt{fft(\ldots)} 20 times
+  with different \texttt{input\_buffer}.
   The measurements for \texttt{fp\_radix2fft\_withscaling} and \texttt{fft} are
   shown in the Figure~\ref{fig:fft_radix}.
+  
+  WCET analysis with \texttt{a3patmos} gives the following results:
+
+  $$\text{WCET}_{\text{fp\_radix2fft\_withscaling}} = 3\enskip 496\enskip 504$$
+  $$\text{WCET}_{\text{fft}} = 4\enskip 919\enskip 107$$
 
 \begin{figure}[hb!]
 \centering
