@@ -11,6 +11,7 @@
 #include <inttypes.h>
 #include "task.h"
 #include "test_data.h"
+#include "measure.h"
 
 #ifdef VERBOSE
 /* Console Output */
@@ -111,16 +112,42 @@ void test_fft(sample_buffer_t* sbuf)
   int i;
 
   input_t input;
-  input.input_count   = ARRAY_SIZE(TEST_DATA);
-  input.input_samples = &TEST_DATA[0];
+
+  int j;
+  int32_t cnt = 0;
+  sample_value_t input_buffer[64];
+  input.input_samples = &input_buffer[0];
+  input.input_count = 64;
+
+  //input.input_count   = ARRAY_SIZE(TEST_DATA);
+  //input.input_samples = &TEST_DATA[0];
+  clear_sample_buffer(sbuf);
+  for(i = 0 ; i < 20 ; i++)
+  {
+    printf("Adding %d samples (values from %" PRId32 " to %" PRId32 ", every 5^th value non-missing)\n",
+	   input.input_count, cnt << 4, (int32_t)((cnt + input.input_count) << 4));
+    for(j = 0; j < input.input_count; j++, cnt++) {
+      if((cnt %  2) == 0) {
+        input_buffer[j] = (cnt << 4);
+      } else {
+        input_buffer[j] = VALUE_MISSING;
+      }
+    }
+    //merge_samples(&input, sbuf);
+    //print_sample_buffer("Sample Buffer", sbuf);
 
   sep("FP - FFT Test");
-  clear_sample_buffer(sbuf);
   /* Add two copies of test data */
   merge_samples(&input, sbuf);
   merge_samples(&input, sbuf);
   print_sample_buffer("FFT Test Start", sbuf);
-  fft(sbuf, &fft_r[0], &fft_i[0]);
+
+	cycles_t fft1;
+	MEASUREMENT_START(fft1);
+    fft(sbuf, &fft_r[0], &fft_i[0]);
+	MEASUREMENT_STOP(fft1);
+	MEASUREMENT_DUMP(fft1);
+/*
   for(i = 0; i < ARRAY_SIZE(fft_r); i++)
   {
     int32_t real = fft_r[i];
@@ -130,6 +157,8 @@ void test_fft(sample_buffer_t* sbuf)
     if(absval > INT16_MAX) absval = INT16_MAX;
     printf("%d: %"PRId32" = |%"PRId32" + %"PRId32" i|\n", i, absval, real, imag);
     fft_abs[i] = absval;
+  }
+*/
   }
 }
 

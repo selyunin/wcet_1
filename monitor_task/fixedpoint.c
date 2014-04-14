@@ -9,6 +9,7 @@
  * Fixed Point Routines: linear interpolation, square root, fast-fourier transform
  */
 #include "fixedpoint.h"
+#include <stdio.h>
 
 const int16_t TWIDDLE_R64[64] = {
   4096,  4096,     0,  4096,  2896,     0, -2896,  4096,
@@ -125,6 +126,7 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
   int q, j, k;
   int n1, n2, n3;
   int L, kL, r, L2;
+  //int cnt_first_loop=0, cnt_second_loop=0, cnt_third_loop=0;
   
   bitreverse(xr,bvr,n);
   bitreverse(xi,bvr,n);
@@ -139,11 +141,15 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
     L2 = L>>1;
     kL = 0;
     
+	//cnt_first_loop++;
     
     for (k=0; k<r; k++) 
     { /* ai: loop here max inf; */
+
+	//cnt_second_loop++;
       for (j=0; j<L2; j++)   
       {
+	//cnt_third_loop++;
 	/* ai: loop here max inf; */
 	n3     = kL + j;
 	n2     = n3 + L2;
@@ -159,6 +165,9 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
       kL += L;
     }
   }
+  //printf("cnt_first_loop = %d\n", cnt_first_loop);
+  //printf("cnt_second_loop = %d\n", cnt_second_loop);
+  //printf("cnt_third_loop = %d\n", cnt_third_loop);
 }
 
 /** @brief Permutation of the elements in vs for FFT
@@ -170,16 +179,21 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
 static void bitreverse(int16_t* vs, const int* brv, int n)
 {
   int i;
+  //int cnt_loop=0, cnt_condition=0;
   for(i = 0; i < n; i++)
   {
+	  //cnt_loop++;
     /* ai: loop here MAX (@n); */
     int j = brv[i];
     if(i < j)
     {
+	  //cnt_condition++;
       int16_t tmp = vs[i];
       vs[i]       = vs[j];
       vs[j]       = tmp;
     }
   }
+  //printf("cnt_loop = %d\n", cnt_loop);
+  //printf("cnt_condition = %d\n", cnt_condition);
 }
 
