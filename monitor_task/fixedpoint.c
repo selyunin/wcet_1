@@ -118,8 +118,8 @@ static void bitreverse(int16_t* vs, const int* brv, int n);
 void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
                               const int *bvr,
                               const int16_t* wr, const int16_t* wi,
-                              int n, // @n
-                              int t) // @t
+                              int n, // @n = 64
+                              int t) // @t = 6
 {
   int32_t tempr, tempi;
   int q, j, k;
@@ -133,7 +133,7 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
   
   
   for (q=1; q<=t; q++)  
-  { /* ai: loop here max inf; */
+  { /* ai: loop here max 6; */
     L = 1; L <<= q;
     r = 1; r <<= (t-q);
     L2 = L>>1;
@@ -141,10 +141,12 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
     
     
     for (k=0; k<r; k++) 
-    { /* ai: loop here max inf; */
+    { /* ai: loop here max 32; */
+	  /* ai: flow here = 63; */
       for (j=0; j<L2; j++)   
       {
-	/* ai: loop here max inf; */
+		/* ai: loop here max 32; */
+	    /* ai: flow here = 192; */
 	n3     = kL + j;
 	n2     = n3 + L2;
 	n1     = L2 - 1 + j;

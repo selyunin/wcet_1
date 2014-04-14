@@ -5,7 +5,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-
 \title{Assignment 1}
 
 \author{Konstantin Selyunin, \matrnr 1228206   \\
@@ -416,9 +415,9 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
   TODO
 
 \item[A2:]
-  Measurement results for test bench implemented in
-  \texttt{main.c:test\_merge\_samples()} is shown in the
-  figure~\ref{fig:mergeSamples}.
+  Measurements for test bench implemented in
+  \texttt{main.c:test\_merge\_samples()} are shown in the
+  Figure~\ref{fig:mergeSamples}.
 
 \begin{figure}[hb!]
   \centering
@@ -441,7 +440,32 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
 \input{../assignment/problem4.tex}
 
 \subsection{Solution}
-% TODO
+\begin{itemize}
+\item[A1:] 
+
+\item[A2:] 
+  Since \texttt{test\_fft()} provides only one execution of
+  \texttt{fft()} we use samples from \texttt{merge\_samples()} to
+  perform more elaborate testing.
+  The measurements for \texttt{fp\_radix2fft\_withscaling} and \texttt{fft} are
+  shown in the Figure~\ref{fig:fft_radix}.
+
+\begin{figure}[hb!]
+\centering
+  \begin{minipage}{0.8\textwidth}
+	\includegraphics[width=4in]{fft_test}
+  \end{minipage}
+  \begin{minipage}{0.8\textwidth}
+	\includegraphics[width=4in]{radix2fft}
+  \end{minipage}
+\caption{Measurements of execution time}
+\label{fig:fft_radix}
+\end{figure}
+
+
+\item[A3:] 
+
+\end{itemize}
 
 \subsection{Listings}
 % TODO
