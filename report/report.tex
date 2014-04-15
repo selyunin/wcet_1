@@ -105,6 +105,7 @@ For details see Figure~\ref{fig:opt_compare}.
 
 \subsection{Listings}
 % TODO
+\subsubsection{\texttt{main.c:run()}}
 \input{listing1.tex}
 
 %------------------------------------------------------------------
@@ -146,14 +147,20 @@ account during static WCET analysis, we add linear
 constraint for maximum number of inversions in the inner loop.
 
 \item[A3:]
-In this task we define annotations in a separate file (aiT.ais, see
-supplement).
-The difference between execution times for the test cases 
+For this task we modify \texttt{Makefile} and include corresponding
+\texttt{insertion\_sort\_O1.*} targets.
+We also define annotations in a separate file (aiT.ais, see listing or supplement).
+The differences between execution times for the test cases 
 and the WCET are summarized in the Figure~\ref{fig:opt_compare}.
 Optimizations performed by compiler  reduce execution
-time by approximately factor of 3.
+time by approximately factor of 3. The pitfall here is
+that the control flow graph from \texttt{a3patmos} tool does not give 
+the valid addresses of instructions corresponding to \texttt{insertion\_sort\_move}:
+to solve this issue we obtain the addresses from the disassembly file
+(after analysing \texttt{insertion\_sort} assembly code).
 
-\begin{figure}[hb!]
+
+\begin{figure}%[hb!]
   \centering
   \includegraphics[width=4in]{q2_3}
   \caption
@@ -164,7 +171,6 @@ time by approximately factor of 3.
 
 
 \item[A4:] 
- \item[A4:]
 In order to perform the analysis we build a directed graph that assigns execution time to edges but not vertices~(Fig.~\ref{fig:ilp}).
 This is done by moving execution time from each block (corresponding to a vertex) to its outgoing edges.
 The same value (equal to the corresponding block execution cost) is assigned to all outgoing edges.
@@ -380,17 +386,30 @@ $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & $x_6$ & $x_7$ & $x_8$ & $x_9$ & $x_{10}$
 \end{tabular}\\
 The same values were obtaines with the \texttt{lp\_solve} solver that was run on the originaly composed constraints (\ref{equ:objective}--\ref{equ:feasibility}).
 
-
-
 \end{itemize}
 
 
 
-
-
 \subsection{Listings}
-% TODO
 
+\subsubsection{\texttt{*.ais} files for arrays of different size}
+\textbf{Array size 8}
+\input{listing2_1_1.tex}
+\textbf{Array size 16}
+\input{listing2_1_2.tex}
+\textbf{Array size 32}
+\input{listing2_1_3.tex}
+\textbf{Array size 64}
+\input{listing2_1_4.tex}
+
+\subsubsection{}
+No listing for this question
+
+\subsubsection{\texttt{-O1}}
+\input{listing2_3.tex}
+
+\subsubsection{Input file for ILP solver}
+\input{listing2_4.tex}
 %------------------------------------------------------------------
 \newpage
 \section{Problem 3}
@@ -402,17 +421,16 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
 \begin{itemize}
 
 \item[A1:]
-  TODO
+  
 
 \item[A2:]
   Measurements for test bench implemented in
   \texttt{main.c:test\_merge\_samples()} are shown in the
   Figure~\ref{fig:mergeSamples}.
 	The result of static analysis with \texttt{a3patmos} gives the
-	following worst case bound:
-  $$\text{WCET}_{\text{merge\_samples}} = TODO\enskip TODO\enskip TODO$$
-
-\begin{figure}[hb!]
+	following worst case execution bound:
+  $$\text{WCET}_{\text{merge\_samples}} = 2\enskip 024\enskip 556$$
+\begin{figure}%[!hb]
   \centering
   \includegraphics[width=4in]{q3_2_merge_samples}
   \caption
@@ -424,6 +442,9 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
 
 \subsection{Listings}
 % TODO
+\subsubsection{ait\_merge\_samples.ais}
+\input{listing3.tex}
+
 
 %------------------------------------------------------------------
 \newpage
