@@ -518,8 +518,19 @@ Clearly, the loop is always executed $n=64$ times, but the body of the \texttt{i
 Although, it is difficult to compute this number analytically, the function will always follow the same control flow.
 With a single run of the function we found that the body of the \texttt{if} operator is executed 28 times.
 
-%TODO
-\fbox{TODO: Describe \texttt{fft}}
+%\fbox{TODO: Describe \texttt{fft}}
+
+In order to define loop bounds for \texttt{fft} we exploit the
+following observation:
+the function has four loops, which are not nested.
+First loop executed at most 4 (?5 TODO) times (\texttt{ait\_fft}: line
+2, see listing below). Loops 2, 3 and 4 are executed 64 (or \texttt{SAMPLE\_COUNT}) times
+each (\texttt{ait\_fft}: lines 3-5). 
+
+For \texttt{fp\_radix2fft\_withscaling} we use loop bounds and flow facts
+discussed above (\texttt{ait\_fft}: lines 7 - 23).
+
+
 
 \item[A2:] 
   Since \texttt{test\_fft()} provides only one execution of
