@@ -421,7 +421,40 @@ No listing for this question
 \begin{itemize}
 
 \item[A1:]
+  To justify flow and loop constraints for
+  \texttt{merge\_samples} we first need to state the following facts:
+  number of samples that are used for analysis is 64
+  (\texttt{SAMPLE\_COUNT}). At most 4 consecutive samples could be
+  missing (\texttt{MAX\_CONSECUTIVE\_MISSING}). This means that
+  minimum number of valid samples to perform the analysis is:
+  $${\text{MIN}_\text{valid samples}}  = \lceil\frac{\texttt{SAMPLE\_COUNT}}{\texttt{MAX\_CONSECUTIVE\_MISSING} + 1}\rceil$$
+  (in our case 13).
   
+  \texttt{merge\_samples} has two nested loops and two conditional
+  branches of interest (we do not consider the case when number of
+  samples <= 0, where we exit without performing interpolation).
+
+  The outer loop is executed for each sample (either valid or missing,
+  64 times in total, line 3 of \texttt{ait\_merge\_samples} in the
+  listing). Then we hit the first \texttt{if} statement: take the
+  branch if current value is not missing. All values might be valid,
+  hence we can take the branch 64 times (\texttt{ait\_merge\_samples}:
+  lines 6 and 11). Now, the current sample is valid (line TODO in
+  \texttt{merge\_samples}, see listing), but several previous  (up to
+  4) samples might be missing. 
+  We take the branch in the second \texttt{if} condition (\texttt{merge\_samples}: line
+  TODO) if current sample is valid and one or several previous 
+  samples are missing
+  (the worst case when each second sample is missing -- we
+  can take the branch max 32 times -- \texttt{ait\_merge\_samples}: lines 7
+  and 12). We will use this fact as a flow
+  constraint. The inner loop interpolates missing samples: at most 4
+  might be missed consecutively, hence the loop bound for the inner
+  loop is 4 (\texttt{ait\_merge\_samples}: line 4). 
+  Max number of iteration of the inner loop:
+  $$\text{MIN}_\text{valid samples} \times
+  \text{MAX\_CONSECUTIVE\_MISSING}$$ which is equal to 52
+  (\texttt{ait\_merge\_samples}: lines 5 and 10).
 
 \item[A2:]
   Measurements for test bench implemented in
@@ -445,6 +478,8 @@ No listing for this question
 \subsubsection{ait\_merge\_samples.ais}
 \input{listing3.tex}
 
+\subsubsection{task.c:merge\_samples()}
+\input{listing3_2.tex}
 
 %------------------------------------------------------------------
 \newpage
