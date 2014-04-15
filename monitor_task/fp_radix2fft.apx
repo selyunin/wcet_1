@@ -11,7 +11,7 @@
  </files>
  <analyses xmlns="http://www.absint.com/apx">
   <analysis xmlns="http://www.absint.com/apx" type="wcet_analysis" id="aiT" enabled="true">
-   <analysis_start xmlns="http://www.absint.com/apx">bitreverse</analysis_start>
+   <analysis_start xmlns="http://www.absint.com/apx">fft</analysis_start>
    <ais xmlns="http://www.absint.com/apx">aiT.ais</ais>
   </analysis>
  </analyses>

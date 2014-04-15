@@ -36,14 +36,14 @@ x = []
 for i in range(len(y0) + 1):
     x.append(i)
 
-labels = 
+#labels = 
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
 #ax.plot(x[0:len(x)-1], y1, 'ro', label = "merge_samples")
 ax.plot(x[0:len(x)-1], y0, 'bo', label = "O0")
 #ax.plot(x[len(x)-1], wcet_O1, 'rD')
-ax.plot(x[len(x)-1], wcet_O0, 'bD')
+#ax.plot(x[len(x)-1], wcet_O0, 'bD')
 
 #Create custom artists
 simArtist_O0 = plt.Line2D((0,1),(0,0), color='b', marker='o', linestyle='')
@@ -63,8 +63,8 @@ plt.subplots_adjust(bottom=0.15)
 #            )
 
 plt.legend([simArtist_O0], 
-        ["merge_samples"], loc=2)
-plt.ylim([0,160000])
+        ["merge_samples test execution"], loc=2)
+plt.ylim([0,100000])
 plt.gca().grid(True)
 plt.ylabel('# of cycles', fontsize=16)
 plt.xlabel('Test runs', fontsize=16)
