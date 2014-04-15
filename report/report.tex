@@ -106,7 +106,8 @@ For details see Figure~\ref{fig:opt_compare}.
 \subsection{Listings}
 % TODO
 \subsubsection{\texttt{main.c:run()}}
-\input{listing1.tex}
+\input{c_listing.tex}
+\lstinputlisting{src/main.c}
 
 %------------------------------------------------------------------
 \newpage
@@ -394,19 +395,20 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
 
 \subsubsection{\texttt{*.ais} files for arrays of different size}
 \textbf{Array size 8}
-\input{listing2_1_1.tex}
+\input{ait_listing.tex}
+\lstinputlisting{src/aiTinsertionSort8.ais}
 \textbf{Array size 16}
-\input{listing2_1_2.tex}
+\lstinputlisting{src/aiTinsertionSort16.ais}
 \textbf{Array size 32}
-\input{listing2_1_3.tex}
+\lstinputlisting{src/aiTinsertionSort32.ais}
 \textbf{Array size 64}
-\input{listing2_1_4.tex}
+\lstinputlisting{src/aiTinsertionSort64.ais}
 
 \subsubsection{}
 No listing for this question
 
 \subsubsection{\texttt{-O1}}
-\input{listing2_3.tex}
+\lstinputlisting{src/aiTinsertionSortO1.ais}
 
 \subsubsection{Input file for ILP solver}
 \input{listing2_4.tex}
@@ -460,7 +462,7 @@ No listing for this question
   Measurements for test bench implemented in
   \texttt{main.c:test\_merge\_samples()} are shown in the
   Figure~\ref{fig:mergeSamples}.
-	The result of static analysis with \texttt{a3patmos} gives the
+	The result of static analysis using \texttt{a3patmos} gives the
 	following worst case execution bound:
   $$\text{WCET}_{\text{merge\_samples}} = 2\enskip 024\enskip 556$$
 \begin{figure}%[!hb]
@@ -474,12 +476,13 @@ No listing for this question
 \end{itemize}
 
 \subsection{Listings}
-% TODO
 \subsubsection{ait\_merge\_samples.ais}
-\input{listing3.tex}
+\input{ait_listing.tex}
+\lstinputlisting{src/aiTmergeSamples.ais}
 
 \subsubsection{task.c:merge\_samples()}
-\input{listing3_2.tex}
+\input{c_listing.tex}
+\lstinputlisting{src/mergeSamples.c}
 
 %------------------------------------------------------------------
 \newpage
@@ -492,10 +495,11 @@ No listing for this question
 \begin{itemize}
 \item[A1:] 
 
+
 \item[A2:] 
   Since \texttt{test\_fft()} provides only one execution of
-  \texttt{fft(\ldots)} we modified  \texttt{merge\_samples()} to
-  perform more elaborate testing. We invoke \texttt{fft(\ldots)} 20 times
+  \texttt{fft} we modified  \texttt{merge\_samples()} to
+  perform more elaborate testing. We invoke \texttt{fft} 20 times
   with different \texttt{input\_buffer}.
   The measurements for \texttt{fp\_radix2fft\_withscaling} and \texttt{fft} are
   shown in the Figure~\ref{fig:fft_radix}.
@@ -505,7 +509,7 @@ No listing for this question
   $$\text{WCET}_{\text{fp\_radix2fft\_withscaling}} = 3\enskip 496\enskip 504$$
   $$\text{WCET}_{\text{fft}} = 4\enskip 919\enskip 107$$
 
-\begin{figure}[hb!]
+\begin{figure}%[hb!]
 \centering
   \begin{minipage}{0.8\textwidth}
 	\includegraphics[width=4in]{fft_test}
@@ -519,11 +523,28 @@ No listing for this question
 
 
 \item[A3:] 
+  TODO
 
 \end{itemize}
 
 \subsection{Listings}
-% TODO
+
+\subsubsection{ait\_fft.ais}
+\input{ait_listing.tex}
+\lstinputlisting{src/aiTfft.ais}
+
+\subsubsection{fft}
+\input{c_listing.tex}
+\lstinputlisting{src/fft.c}
+
+\subsubsection{fp\_radix2fft\_withscaling}
+\input{c_listing.tex}
+\lstinputlisting{src/fpRadix2fftWithscaling.c}
+
+\subsubsection{bitreverse}
+\input{c_listing.tex}
+\lstinputlisting{src/bitreverse.c}
+
 
 %------------------------------------------------------------------
 \newpage
