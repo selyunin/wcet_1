@@ -610,13 +610,26 @@ The reason is given in the section A1 above.
   We have spent quite some time doing the lab, and (at least for me)
   it was more than expected. Writing annotations will not take much
   time for a person familiar with the framework and the work flow, but
-  in order to understand how all the 
+  familiarising yourself with tools takes time. In addition,
+  documentation is spread across different files and places. The claim
+  in the lab assignment that ``source code annotation sometimes might not 
+  work'' was the reason for us to use separate \texttt{*.ais} files
+  instead. 
 
 \item[A2:]
-TODO
+  Problems: optimizations, performed by compiler affect the structure
+  of CFG in \texttt{a3patmos}: it gave wrong instruction address, to
+  resolve the correct result analysis of the disassembly needed.
 
 \item[A3:]
-TODO
+  The analysis is architecture-specific, and assembly code
+  is exactly what is executed by the hardware. It is sometimes
+  necessary annotate assembly code since code structure might be
+  altered during compilation. Annotations of assembly instructions
+  complicate the analysis (and may become a source of additional errors) 
+  since one needs to map the knowledge about the program to assembly code.
+  In this case we see the following problems: analysis takes more
+  time, and is more error-prone.
 
 \end{itemize}
 
