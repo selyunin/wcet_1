@@ -91,8 +91,6 @@ elements from 0 to 496).
 	$$
 	%\end{equation}
 
-
-
            
 \item[A3:] 
 The minimum execution time (in processor cycles) is $t_1 = 5477$
@@ -495,6 +493,33 @@ No listing for this question
 \begin{itemize}
 \item[A1:] 
 
+Function \texttt{fp\_radix2fft\_withscaling} represents a classical implementation of Fast Fourier Transform algorithm.
+This algorithm can be implemented in hardware.
+This claim can be easily checked by inspecting the code.
+A feature of these kind of algorithms is that the function code can be fully unfolded in a plain linear program, i.e. control flow does not depend on the input data.
+We treat function arguments \texttt{n} and \texttt{t} as parameters of the algorithm.
+In our problem they are constant: $n=64$, $t=\log_2 n = 6$.
+
+For every loop in \texttt{fp\_radix2fft\_withscaling} it is true that the loop variable does not change inside the loop body.
+The outer loop executes exactly $t=6$ times.
+The two inner loops execute at most $2^5=32$ times each during a single iteration of the outer loop.
+Moreover, the bounds of the two inner loops are set exclusively in the outer loop and in the way that there is a strict relation between them.
+Indeed, if the current iteration of the outer loop is $q$, then the number of iterations of the inner loops are exactly $2^{t-q}=2^{6-q}$ and $2^{q-1}$.
+The number of the most inner loop body executions is exactly $2^{6-q}\cdot2^{q-1}=2^5$ in the current iteration of the outer loop.
+In total, the most inner loop body is executed exactly $t\cdot2^{t-1}=6\cdot2^5=192$ times.
+The middle loop (the inner loop with the loop variable \texttt{k}) body execution count depends on the value of \texttt{r} which is constant during each outer loop iteration, but decreases after each outer loop iteration.
+In total, the middle loop body is executed exactly $\sum_{q=1}^t 2^{t-q} = 2^t -1 = 2^6-1 = 63$ times.
+
+Function \texttt{fp\_radix2fft\_withscaling} performs two calls of the function \texttt{bitreverse} before entering the loops.
+However, \texttt{bitreverse} has the same properties as \texttt{fp\_radix2fft\_withscaling} itself: the control flow does not depend on the data, the loops can be fully unfolded and the function can be implemented in hardware.
+We treat a constant array, passed to the function, as a parameter, but not an input, since it is always the same for all function calls with the sane value of \texttt{n}.
+In fact, \texttt{bitreverse} represents constant permutation or fixed routing in hardware.
+Clearly, the loop is always executed $n=64$ times, but the body of the \texttt{if} operator is expected to be executed significantly smaller number of times.
+Although, it is difficult to compute this number analytically, the function will always follow the same control flow.
+With a single run of the function we found that the body of the \texttt{if} operator is executed 28 times.
+
+%TODO
+\fbox{TODO: Describe \texttt{fft}}
 
 \item[A2:] 
   Since \texttt{test\_fft()} provides only one execution of
@@ -522,8 +547,9 @@ No listing for this question
 \end{figure}
 
 
-\item[A3:] 
-  TODO
+\item[A3:]
+It is absolutely safe to use for analysis the loop iteration counts observed during a test run of \texttt{fp\_radix2fft\_withscaling}.
+The reason is given in the section A1 above.
 
 \end{itemize}
 
@@ -567,7 +593,21 @@ No listing for this question
 \input{../assignment/problem6.tex}
 
 \subsection{Answers}
-% TODO
+\begin{itemize}
+
+\item[A1:]
+  We have spent quite some time doing the lab, and (at least for me)
+  it was more than expected. Writing annotations will not take much
+  time for a person familiar with the framework and the work flow, but
+  in order to understand how all the 
+
+\item[A2:]
+TODO
+
+\item[A3:]
+TODO
+
+\end{itemize}
 
 
 \end{document}
