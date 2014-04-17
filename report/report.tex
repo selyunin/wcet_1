@@ -6,6 +6,9 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{color}
+\usepackage{float}
+
+
 
 \definecolor{mygreen}{rgb}{0.133,0.545,0.133}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -23,7 +26,7 @@
 % create titlepage
 \maketitle
 
-%\tableofcontents
+\tableofcontents
 %\newpage
 
 %------------------------------------------------------------------
@@ -591,7 +594,58 @@ The reason is given in the section A1 above.
 \input{../assignment/problem5.tex}
 
 \subsection{Solution}
-% TODO
+
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Function & WCET (cycles)\\
+\hline
+merge\_samples & 2152787 \\
+fft & 4905711 \\
+check\_sin & 2318892\\
+check\_square & 2386340\\
+\hline
+\end{tabular}
+\caption{The individual WCETs of the observed functions.}
+\label{tab:wcetall}
+\end{table}
+
+
+
+\begin{itemize}
+\item[A1:]
+
+In Table \ref{tab:wcetall} we observe WCETs of all functions including \textit{check\_sin} and \textit{check\_square}. The flow path of the function \textit{task} consist out of one call the functions merge\_samples and fft each, and either one call of check\_sin or check\_square. In on or estimation of $WCET_{task}$ we chose a combination of $WCET_{merge\_samples}$,$WCET_{fft}$ and $WCET_{check\_square}$ because their sum yields the largest execution time. 
+
+\begin{equation}
+\begin{split}
+WCET_{Task} &= WCET_{merge\_samples}  +  WCET_{fft}   +  WCET_{check\_square}  \\
+            &= 9444878 \quad \textit{cycles}
+\end{split}
+\end{equation}  
+
+\item[A2:]
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+WCET & cycles\\
+\hline
+$WCET_{estimated}$ & 9444878 \\
+$WCET_{meassured}$ & 9453086 \\
+\hline
+\end{tabular}
+\caption{Estimated and measured $WCET_{task}$}
+\label{tab:wcecomp}
+\end{table}
+
+Table \ref{tab:wcecomp} shows comparison between estimated and measured WCET of the function \textit{task}.  
+
+\end{itemize}
+
 
 \subsection{Listings}
 % TODO
