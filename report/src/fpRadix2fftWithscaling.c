@@ -10,11 +10,14 @@
   * adapted from: http://www.mathworks.com/products/fixed/demos.html?file=/products/demos/shipping/fixedpoint/fi_radix2fft_demo.html
   *
   */
+
+/* ai: instruction "fp_radix2fft_withscaling" is entered with @n = 64; */
+/* ai: instruction "fp_radix2fft_withscaling" is entered with @t = 6; */
 void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
                               const int *bvr,
                               const int16_t* wr, const int16_t* wi,
-                              int n, // @n = 64
-                              int t) // @t = 6
+                              int n, // @n
+                              int t) // @t
 {
   int32_t tempr, tempi;
   int q, j, k;
@@ -28,7 +31,8 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
   
   
   for (q=1; q<=t; q++)  
-  { /* ai: loop here max 6; */
+  { /* ai: loop here max (@t); */
+	  /* ai: flow (here) <= 6; */
     L = 1; L <<= q;
     r = 1; r <<= (t-q);
     L2 = L>>1;
@@ -37,15 +41,15 @@ void fp_radix2fft_withscaling(int16_t* xr, int16_t* xi,
     
     for (k=0; k<r; k++) 
     { /* ai: loop here max 32; */
-	  /* ai: flow here = 63; */
+	  /* ai: flow (here) <= 63; */
       for (j=0; j<L2; j++)   
       {
-		/* ai: loop here max 32; */
-	    /* ai: flow here = 192; */
+	/* ai: loop here max 32; */
 	n3     = kL + j;
 	n2     = n3 + L2;
 	n1     = L2 - 1 + j;
 	/* ai: label here = "fp_radix2fft_withscaling_body"; */
+	 /* ai: flow (here) <= 192; */
 	tempr  = (int32_t)wr[n1]*(int32_t)xr[n2] - (int32_t)wi[n1]*(int32_t)xi[n2];
 	tempi  = (int32_t)wr[n1]*(int32_t)xi[n2] + (int32_t)wi[n1]*(int32_t)xr[n2];
 	xr[n2] = ((((int32_t)xr[n3])<<FP_FRAC) - tempr)>>(FP_FRAC+1);

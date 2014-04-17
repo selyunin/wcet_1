@@ -4,6 +4,8 @@
  *  @param n the size of vs and brv
  *  User-Register: @n >= n
  */
+
+/* ai: instruction "bitreverse" is entered with @n = 64; */
 static void bitreverse(int16_t* vs, const int* brv, int n)
 {
   int i;

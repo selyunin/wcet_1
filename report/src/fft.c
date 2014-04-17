@@ -1,6 +1,7 @@
 /****************************************************************************
  * FFT transform, N = SAMPLE_COUNT
  ***************************************************************************/
+/* ai: instruction "fft" is entered with @samplecount = 64; */
 status_t fft(sample_buffer_t *buf, int16_t * fft_r_out, int16_t * fft_i_out)
 {
   int i, offs;
@@ -9,7 +10,8 @@ status_t fft(sample_buffer_t *buf, int16_t * fft_r_out, int16_t * fft_i_out)
 
   for(offs = -1; offs >= -MAX_CONSECUTIVE_MISSING; --offs) 
   { 
-    /* ai: loop here max 5; */
+    /* ai: loop here max 4; */
+    /* ai: flow (here) <=64; */
     if(! IS_VALUE_MISSING(sample_buffer_get(buf,offs))) break;
   }
   if(offs < -MAX_CONSECUTIVE_MISSING) return S_TOO_FEW_VALID_SAMPLES;
@@ -19,7 +21,8 @@ status_t fft(sample_buffer_t *buf, int16_t * fft_r_out, int16_t * fft_i_out)
   
   for(i = 0; i < SAMPLE_COUNT; i++)
   { 
-    /* ai: loop here max @samplecount; */
+    /* ai: loop here max (@samplecount); */
+    /* ai: flow (here) <=64; */
     int16_t val = sample_buffer_get(buf,offs+i);
     if(IS_VALUE_MISSING(val)) return S_TOO_FEW_VALID_SAMPLES;
     if(val < 0) val = -val;
@@ -34,6 +37,7 @@ status_t fft(sample_buffer_t *buf, int16_t * fft_r_out, int16_t * fft_i_out)
     { 
       /* ai: loop here max @samplecount; */
       /* Normalize real-valued input */
+	  /* ai: flow (here) <=64; */
       int32_t old_val = sample_buffer_get(buf,i-SAMPLE_COUNT);
       fft_r_out[i] = (int16_t)((old_val*multiplier) >> 16);
     }
@@ -45,7 +49,8 @@ status_t fft(sample_buffer_t *buf, int16_t * fft_r_out, int16_t * fft_i_out)
   
   for(i = 0; i < SAMPLE_COUNT; i++)
   {
-    /* ai: loop here max @samplecount; */
+    /* ai: loop here max (@samplecount); */
+	/* ai: flow (here) <=64; */
     fft_i_out[i] = 0;
   }
 

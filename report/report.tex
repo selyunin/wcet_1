@@ -19,7 +19,9 @@
 \author{Konstantin Selyunin, \matrnr 1228206   \\
          {\small e1228206@student.tuwien.ac.at} \\
         Oleksandr Melnychenko, \matrnr 1228477 \\
-         {\small oleksandr.melnychenko@tuwien.ac.at}
+         {\small oleksandr.melnychenko@tuwien.ac.at}\\
+        Haris Isakovic, \matrnr  0325697  \\
+         {\small haris@vmars.tuwien.ac.at}\\
 }
 \begin{document}
 
@@ -150,7 +152,7 @@ constraint of the maximum inner loop iterations count.
 \item[A3:]
 For this task we modify \texttt{Makefile} and include corresponding
 \texttt{insertion\_sort\_O1.*} targets.
-We also define annotations in a separate file (aiT.ais, see listing or supplement).
+We also define annotations in a separate file (\texttt{aiT.ais}, see listing or supplement).
 The differences between execution times for the test cases 
 and the WCET are summarized in the Figure~\ref{fig:opt_compare}.
 Optimizations performed by compiler  reduce execution
@@ -408,9 +410,6 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
 \textbf{Array size 64}
 \lstinputlisting{src/aiTinsertionSort64.ais}
 
-\subsubsection{}
-No listing for this question
-
 \subsubsection{\texttt{-O1}}
 \lstinputlisting{src/aiTinsertionSortO1.ais}
 
@@ -487,11 +486,11 @@ No listing for this question
 \end{itemize}
 
 \subsection{Listings}
-\subsubsection{ait\_merge\_samples.ais}
+\subsubsection{\texttt{ait\_merge\_samples.ais}}
 \input{ait_listing.tex}
 \lstinputlisting{src/aiTmergeSamples.ais}
 
-\subsubsection{task.c:merge\_samples()}
+\subsubsection{\texttt{task.c:merge\_samples}}
 \input{c_listing.tex}
 \lstinputlisting{src/mergeSamples.c}
 
@@ -579,19 +578,19 @@ The reason is given in the section A1 above.
 
 \subsection{Listings}
 
-\subsubsection{ait\_fft.ais}
+\subsubsection{\texttt{ait\_fft.ais}}
 \input{ait_listing.tex}
 \lstinputlisting{src/aiTfft.ais}
 
-\subsubsection{fft}
+\subsubsection{\texttt{fft}}
 \input{c_listing.tex}
 \lstinputlisting{src/fft.c}
 
-\subsubsection{fp\_radix2fft\_withscaling}
+\subsubsection{\texttt{fp\_radix2fft\_withscaling}}
 \input{c_listing.tex}
 \lstinputlisting{src/fpRadix2fftWithscaling.c}
 
-\subsubsection{bitreverse}
+\subsubsection{\texttt{bitreverse}}
 \input{c_listing.tex}
 \lstinputlisting{src/bitreverse.c}
 
@@ -659,7 +658,20 @@ Table \ref{tab:wcecomp} shows comparison between estimated and measured WCET of 
 
 
 \subsection{Listings}
-% TODO
+
+\subsubsection{\texttt{task.c:task}}
+\input{c_listing.tex}
+\lstinputlisting{src/task.c}
+
+\subsubsection{\texttt{check\_sin}}
+\input{c_listing.tex}
+\lstinputlisting{src/checkSin.c}
+
+\subsubsection{\texttt{check\_square}}
+\input{c_listing.tex}
+\lstinputlisting{src/checkSquare.c}
+
+
 
 %------------------------------------------------------------------
 \newpage
