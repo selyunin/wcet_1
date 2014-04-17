@@ -1,0 +1,4 @@
+instruction ".LBB3_15" + 24 bytes branches to ".LBB3_1", ".LBB3_2", ".LBB3_3", ".LBB3_4", ".LBB3_5"; # jumptable (source: llvm)
+instruction ".LBB3_16" + 24 bytes branches to ".LBB3_8", ".LBB3_9", ".LBB3_10", ".LBB3_11", ".LBB3_12"; # jumptable (source: llvm)
+instruction ".LBB47_375" + 400 bytes branches to ".LBB47_31", ".LBB47_216", ".LBB47_33", ".LBB47_29", ".LBB47_34", ".LBB47_37", ".LBB47_36", ".LBB47_38", ".LBB47_43", ".LBB47_44", ".LBB47_67", ".LBB47_54", ".LBB47_55", ".LBB47_45", ".LBB47_159", ".LBB47_170", ".LBB47_176", ".LBB47_185", ".LBB47_56", ".LBB47_46", ".LBB47_53", ".LBB47_49", ".LBB47_150", ".LBB47_160", ".LBB47_169", ".LBB47_52", ".LBB47_26", ".LBB47_177", ".LBB47_186"; # jumptable (source: llvm)
+instruction ".LBB74_173" + 56 bytes branches to ".LBB74_28", ".LBB74_29", ".LBB74_31", ".LBB74_30", ".LBB74_32"; # jumptable (source: llvm)
