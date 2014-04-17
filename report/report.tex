@@ -446,11 +446,11 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
   Then we hit the first \texttt{if} statement: take the
   branch if the current value is not missing. All values might be valid,
   hence we can take the branch 64 times at most (\texttt{ait\_merge\_samples}:
-  lines 6 and 11). Now, the current sample is valid (line TODO in
+  lines 6 and 11). Now, the current sample is valid (line 37 in
   \texttt{merge\_samples}, see listing), but up to
   4 previous samples might be missing. 
   We take the branch in the second \texttt{if} condition (\texttt{merge\_samples}: line
-  TODO) if the current sample is valid and one or several previous 
+  38) if the current sample is valid and one or several previous 
   samples are missing.
   The worst case is when each second sample is missing---we
   can take the branch max 32 times (\texttt{ait\_merge\_samples}: lines 7
@@ -475,6 +475,13 @@ The same values were obtaines with the \texttt{lp\_solve} solver that was run on
   \[
   \text{WCET}_{\text{merge\_samples}} = 2\enskip 024\enskip 556.
   \]
+
+  The results of static analysis is quite pessimistic, the main reason
+  the difficulty of analysis of caches and pipelines: it might be
+  possible for some cases predict ``always hit'' or ``always miss'',
+  but for the situations that are not clear a priori the worst case
+  should be taken to be on a safe side.
+
 \begin{figure}%[!hb]
   \centering
   \includegraphics[width=4in]{q3_2_merge_samples}
@@ -535,7 +542,7 @@ With a single run of the function we found that the body of the \texttt{if} oper
 In order to define loop bounds for \texttt{fft}, we exploit the
 following observation:
 the function has four loops, which are not nested.
-First loop iterates at most 4 (?5 TODO) times (\texttt{ait\_fft}: line
+First loop iterates at most  5  times (\texttt{ait\_fft}: line
 2, see listing below). Loops 2, 3 and 4 iterate 64 (or \texttt{SAMPLE\_COUNT}) times
 each (\texttt{ait\_fft}: lines 3--5). 
 
