@@ -1,0 +1,108 @@
+<!DOCTYPE APX>
+<project xmlns="http://www.absint.com/apx" build="205838" target="patmos" version="13.04i">
+ <options xmlns="http://www.absint.com/apx">
+  <analyses_options xmlns="http://www.absint.com/apx">
+   <extract_annotations_from_source_files xmlns="http://www.absint.com/apx">true</extract_annotations_from_source_files>
+  </analyses_options>
+  <general_options xmlns="http://www.absint.com/apx">
+   <include_path xmlns="http://www.absint.com/apx">/homes/n0325697/1/monitor_task,new path</include_path>
+  </general_options>
+ </options>
+ <files xmlns="http://www.absint.com/apx">
+  <executables xmlns="http://www.absint.com/apx" hash="775a1344142848b555f6f6b7a68cf40c">monitor_task.elf</executables>
+  <ais xmlns="http://www.absint.com/apx" hash="4d87c550807ea86d27dcc7f738c2026d">monitor_task.ais</ais>
+ </files>
+ <analyses xmlns="http://www.absint.com/apx">
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="mergesamples" type="wcet_analysis">
+   <analysis_start xmlns="http://www.absint.com/apx">merge_samples</analysis_start>
+  </analysis>
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="ControlFlow_Visualizer" type="control_flow_graph">
+   <analysis_start xmlns="http://www.absint.com/apx">merge_samples</analysis_start>
+   <ais xmlns="http://www.absint.com/apx"/>
+   <report xmlns="http://www.absint.com/apx"/>
+   <xml_report xmlns="http://www.absint.com/apx"/>
+   <html_report xmlns="http://www.absint.com/apx"/>
+   <gdl xmlns="http://www.absint.com/apx"/>
+   <comment xmlns="http://www.absint.com/apx"/>
+   <automatic_annotations xmlns="http://www.absint.com/apx"/>
+  </analysis>
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="fft" type="wcet_analysis">
+   <analysis_start xmlns="http://www.absint.com/apx">fft</analysis_start>
+   <ais xmlns="http://www.absint.com/apx"/>
+   <report xmlns="http://www.absint.com/apx"/>
+   <xml_report xmlns="http://www.absint.com/apx"/>
+   <html_report xmlns="http://www.absint.com/apx"/>
+   <gdl xmlns="http://www.absint.com/apx"/>
+   <comment xmlns="http://www.absint.com/apx"/>
+   <expected_result xmlns="http://www.absint.com/apx"/>
+   <expected_result_unit xmlns="http://www.absint.com/apx">cycles</expected_result_unit>
+   <automatic_annotations xmlns="http://www.absint.com/apx"/>
+  </analysis>
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="ControlFlow_Visualizer_2" type="control_flow_graph">
+   <analysis_start xmlns="http://www.absint.com/apx">fft</analysis_start>
+   <ais xmlns="http://www.absint.com/apx"/>
+   <report xmlns="http://www.absint.com/apx"/>
+   <xml_report xmlns="http://www.absint.com/apx"/>
+   <html_report xmlns="http://www.absint.com/apx"/>
+   <gdl xmlns="http://www.absint.com/apx"/>
+   <comment xmlns="http://www.absint.com/apx"/>
+   <automatic_annotations xmlns="http://www.absint.com/apx"/>
+  </analysis>
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="ControlFlow_Visualizer_3" type="control_flow_graph">
+   <analysis_start xmlns="http://www.absint.com/apx">main</analysis_start>
+   <ais xmlns="http://www.absint.com/apx"/>
+   <report xmlns="http://www.absint.com/apx"/>
+   <xml_report xmlns="http://www.absint.com/apx"/>
+   <html_report xmlns="http://www.absint.com/apx"/>
+   <gdl xmlns="http://www.absint.com/apx"/>
+   <comment xmlns="http://www.absint.com/apx"/>
+   <automatic_annotations xmlns="http://www.absint.com/apx"/>
+  </analysis>
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="task" type="wcet_analysis">
+   <analysis_start xmlns="http://www.absint.com/apx">task</analysis_start>
+   <ais xmlns="http://www.absint.com/apx"/>
+   <report xmlns="http://www.absint.com/apx"/>
+   <xml_report xmlns="http://www.absint.com/apx"/>
+   <html_report xmlns="http://www.absint.com/apx"/>
+   <gdl xmlns="http://www.absint.com/apx"/>
+   <comment xmlns="http://www.absint.com/apx"/>
+   <expected_result xmlns="http://www.absint.com/apx"/>
+   <expected_result_unit xmlns="http://www.absint.com/apx">cycles</expected_result_unit>
+   <automatic_annotations xmlns="http://www.absint.com/apx"/>
+  </analysis>
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="check_sin" type="wcet_analysis">
+   <analysis_start xmlns="http://www.absint.com/apx">check_sin</analysis_start>
+   <ais xmlns="http://www.absint.com/apx"/>
+   <report xmlns="http://www.absint.com/apx"/>
+   <xml_report xmlns="http://www.absint.com/apx"/>
+   <html_report xmlns="http://www.absint.com/apx"/>
+   <gdl xmlns="http://www.absint.com/apx"/>
+   <comment xmlns="http://www.absint.com/apx"/>
+   <expected_result xmlns="http://www.absint.com/apx"/>
+   <expected_result_unit xmlns="http://www.absint.com/apx">cycles</expected_result_unit>
+   <automatic_annotations xmlns="http://www.absint.com/apx"/>
+  </analysis>
+  <analysis xmlns="http://www.absint.com/apx" enabled="true" id="check_square" type="wcet_analysis">
+   <analysis_start xmlns="http://www.absint.com/apx">check_square</analysis_start>
+   <ais xmlns="http://www.absint.com/apx"/>
+   <report xmlns="http://www.absint.com/apx"/>
+   <xml_report xmlns="http://www.absint.com/apx"/>
+   <html_report xmlns="http://www.absint.com/apx"/>
+   <gdl xmlns="http://www.absint.com/apx"/>
+   <comment xmlns="http://www.absint.com/apx"/>
+   <expected_result xmlns="http://www.absint.com/apx"/>
+   <expected_result_unit xmlns="http://www.absint.com/apx">cycles</expected_result_unit>
+   <automatic_annotations xmlns="http://www.absint.com/apx"/>
+  </analysis>
+  <analysis enabled="true" id="ControlFlow_Visualizer_4" type="control_flow_graph">
+   <analysis_start>task</analysis_start>
+   <ais></ais>
+   <report></report>
+   <xml_report></xml_report>
+   <html_report></html_report>
+   <gdl></gdl>
+   <comment></comment>
+   <automatic_annotations></automatic_annotations>
+  </analysis>
+ </analyses>
+</project>

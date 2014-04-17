@@ -1,0 +1,7 @@
+# enter AIS annotations here or use the AIS Wizard from the context menu
+
+
+instruction "merge_samples" is entered with @inputcount = 64;
+loop "merge_samples" + 1 loop MAX (@inputcount);
+flow (0x27f0) <= 48;
+loop "merge_samples" + 2 loops MAX 4;

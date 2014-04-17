@@ -1,0 +1,11 @@
+compiler "patmos-llvm";
+
+include "llvm.ais";
+
+
+# infeasible calls in __idivsi in iinterpolate16
+try instruction "iinterpolate16" + 1 calls is never executed;
+try instruction "iinterpolate16" + 2 calls is never executed;
+
+# bound for the division loop called in fft
+try loop "__udivsi3" + 1 loops max 31;
