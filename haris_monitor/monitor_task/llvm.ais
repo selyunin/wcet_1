@@ -1,0 +1,2 @@
+instruction ".LBB3_15" + 24 bytes branches to ".LBB3_1", ".LBB3_2", ".LBB3_3", ".LBB3_4", ".LBB3_5"; # jumptable (source: llvm)
+instruction ".LBB3_16" + 24 bytes branches to ".LBB3_8", ".LBB3_9", ".LBB3_10", ".LBB3_11", ".LBB3_12"; # jumptable (source: llvm)
