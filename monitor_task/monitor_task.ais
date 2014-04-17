@@ -2,6 +2,7 @@ compiler "patmos-llvm";
 
 include "llvm.ais";
 
+
 # infeasible calls in __idivsi in iinterpolate16
 try instruction "iinterpolate16" + 1 calls is never executed;
 try instruction "iinterpolate16" + 2 calls is never executed;
