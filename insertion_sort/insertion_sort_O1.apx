@@ -1,0 +1,18 @@
+<!DOCTYPE APX>
+<project xmlns="http://www.absint.com/apx" target="patmos" version="13.04i" build="205838">
+ <options xmlns="http://www.absint.com/apx">
+  <general_options xmlns="http://www.absint.com/apx">
+   <include_path xmlns="http://www.absint.com/apx">/homes/n1228206/1/insertion_sort</include_path>
+  </general_options>
+ </options>
+ <files xmlns="http://www.absint.com/apx">
+  <executables xmlns="http://www.absint.com/apx" hash="15644b5e1c450862652327a3c551fcfc">insertion_sort_O1.elf</executables>
+  <ais xmlns="http://www.absint.com/apx" hash="02c5a9a9900af4432c764a761c029edc">insertion_sort.ais</ais>
+ </files>
+ <analyses xmlns="http://www.absint.com/apx">
+  <analysis xmlns="http://www.absint.com/apx" type="wcet_analysis" enabled="true" id="aiT_insertion_sort_O1">
+   <analysis_start xmlns="http://www.absint.com/apx">insertion_sort</analysis_start>
+   <ais xmlns="http://www.absint.com/apx">aiT_files/aiTinsertionSortO1.ais</ais>
+  </analysis>
+ </analyses>
+</project>

@@ -1,0 +1,54 @@
+<!DOCTYPE APX>
+<project xmlns="http://www.absint.com/apx" target="patmos" version="13.04i" build="205838">
+ <options xmlns="http://www.absint.com/apx">
+  <general_options xmlns="http://www.absint.com/apx">
+   <include_path xmlns="http://www.absint.com/apx">/homes/n1228206/1/insertion_sort</include_path>
+  </general_options>
+ </options>
+ <files xmlns="http://www.absint.com/apx">
+  <executables xmlns="http://www.absint.com/apx" hash="a276b38896c31104d507653bcf5d06bc">insertion_sort.elf</executables>
+  <ais xmlns="http://www.absint.com/apx" hash="02c5a9a9900af4432c764a761c029edc">insertion_sort.ais</ais>
+ </files>
+ <analyses xmlns="http://www.absint.com/apx">
+  <analysis xmlns="http://www.absint.com/apx" type="wcet_analysis" enabled="true" id="aiT_insertion_sort_size_32">
+   <analysis_start xmlns="http://www.absint.com/apx">insertion_sort</analysis_start>
+   <ais xmlns="http://www.absint.com/apx">aiT_files/aiTinsertionSort32.ais</ais>
+  </analysis>
+  <analysis type="wcet_analysis" enabled="true" id="aiT_insertion_sort_size_8">
+   <analysis_start>insertion_sort</analysis_start>
+   <ais>aiT_files/aiTinsertionSort8.ais</ais>
+   <report></report>
+   <xml_report></xml_report>
+   <html_report></html_report>
+   <gdl></gdl>
+   <comment></comment>
+   <expected_result></expected_result>
+   <expected_result_unit>cycles</expected_result_unit>
+   <automatic_annotations></automatic_annotations>
+  </analysis>
+  <analysis type="wcet_analysis" enabled="true" id="aiT_insertion_sort_size_16">
+   <analysis_start>insertion_sort</analysis_start>
+   <ais>aiT_files/aiTinsertionSort16.ais</ais>
+   <report></report>
+   <xml_report></xml_report>
+   <html_report></html_report>
+   <gdl></gdl>
+   <comment></comment>
+   <expected_result></expected_result>
+   <expected_result_unit>cycles</expected_result_unit>
+   <automatic_annotations></automatic_annotations>
+  </analysis>
+  <analysis type="wcet_analysis" enabled="true" id="aiT_insertion_sort_size_64">
+   <analysis_start>insertion_sort</analysis_start>
+   <ais>aiT_files/aiTinsertionSort64.ais</ais>
+   <report></report>
+   <xml_report></xml_report>
+   <html_report></html_report>
+   <gdl></gdl>
+   <comment></comment>
+   <expected_result></expected_result>
+   <expected_result_unit>cycles</expected_result_unit>
+   <automatic_annotations></automatic_annotations>
+  </analysis>
+ </analyses>
+</project>

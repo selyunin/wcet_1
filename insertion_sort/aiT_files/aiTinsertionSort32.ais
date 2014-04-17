@@ -1,0 +1,8 @@
+# enter AIS annotations here or use the AIS Wizard from the context menu
+instruction "insertion_sort" is entered with @size = 32;
+loop "insertion_sort" + 1 loop max @size begin;
+loop "insertion_sort" + 2 loop max (@size - 1) begin;
+label 0x1464 = "insertion_sort_move";
+
+#flow at most @size x (@size -1)
+flow "insertion_sort_move" <= 496 ("insertion_sort");#size 32
