@@ -171,12 +171,6 @@ status_t fft(sample_buffer_t *buf, int16_t * fft_r_out, int16_t * fft_i_out)
   /* ai: instruction here is entered with @t =  6; */
 
 
-  //printf("cnt_first_loop = %d\n", cnt_first_loop);
-  //printf("cnt_second_loop = %d\n", cnt_second_loop);
-  //printf("cnt_condition = %d\n", cnt_condition);
-  //printf("cnt_third_loop = %d\n", cnt_third_loop);
-  //printf("cnt_fourth_loop = %d\n", cnt_fourth_loop);
-
 
 	//cycles_t radix2fft;
 	//MEASUREMENT_START(radix2fft);

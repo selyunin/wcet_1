@@ -108,7 +108,6 @@ void test_fft(sample_buffer_t* sbuf)
 {
   int16_t fft_r[SAMPLE_COUNT];
   int16_t fft_i[SAMPLE_COUNT];
-  int32_t fft_abs[SAMPLE_COUNT];
   int i;
 
   input_t input;
@@ -119,8 +118,6 @@ void test_fft(sample_buffer_t* sbuf)
   input.input_samples = &input_buffer[0];
   input.input_count = 64;
 
-  //input.input_count   = ARRAY_SIZE(TEST_DATA);
-  //input.input_samples = &TEST_DATA[0];
   clear_sample_buffer(sbuf);
   for(i = 0 ; i < 20 ; i++)
   {
@@ -133,8 +130,6 @@ void test_fft(sample_buffer_t* sbuf)
         input_buffer[j] = VALUE_MISSING;
       }
     }
-    //merge_samples(&input, sbuf);
-    //print_sample_buffer("Sample Buffer", sbuf);
 
   sep("FP - FFT Test");
   /* Add two copies of test data */
@@ -147,18 +142,6 @@ void test_fft(sample_buffer_t* sbuf)
     fft(sbuf, &fft_r[0], &fft_i[0]);
 	MEASUREMENT_STOP(fft1);
 	MEASUREMENT_DUMP(fft1);
-/*
-  for(i = 0; i < ARRAY_SIZE(fft_r); i++)
-  {
-    int32_t real = fft_r[i];
-    int32_t imag = fft_i[i];
-    int32_t absval = FP_SQRT( ((real*real)>>FP_FRAC) + ((imag*imag)>>FP_FRAC) );
-
-    if(absval > INT16_MAX) absval = INT16_MAX;
-    printf("%d: %"PRId32" = |%"PRId32" + %"PRId32" i|\n", i, absval, real, imag);
-    fft_abs[i] = absval;
-  }
-*/
   }
 }
 
